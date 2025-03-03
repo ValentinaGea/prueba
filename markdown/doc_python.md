@@ -4,13 +4,13 @@
 
 ## Índice
 
-1. [ ¿Qué es Python?](#qué-es-python)
+1. [ ¿Qué es Python?](#que-es-python)
 2. [ Comprendiendo los Condicionales en Python](#comprendiendo-los-condicionales-en-python)
 3. [ Los Bucles en Python y su Importancia](#los-bucles-en-python-y-su-importancia)
-4. [ Comprensión de Listas](#comprensión-de-listas)
-5. [ Argumentos en Python: pasando información a las funciones](#argumentos-en-python-pasando-información-a-las-funciones)
-6. [ Funciones Lambda](#funciones-lambda)
-7. [ Gestión de Paquetes con pip](#gestión-de-paquetes-con-pip)
+4. [ Comprensión de Listas](#comprension-de-listas)
+5. [ Argumentos en Python: pasando información a las funciones](#argumentos-en-python-pasando-informacion-a-las-funciones)
+6. [ Función Lambda](#funcion-lambda)
+7. [ Gestión de Paquetes con pip](#gestion-de-paquetes-con-pip)
 
 ## 📘 ¿Que es Python?
 
@@ -532,7 +532,7 @@ edad: 30
 
 
 
-## ⚡ Funciones Lambda
+## ⚡ Función Lambda
 
 En Python, una **función lambda** se refiere a una pequeña **función anónima**. Las llamamos “funciones anónimas” porque técnicamente carecen de nombre.
 
