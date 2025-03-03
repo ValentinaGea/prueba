@@ -1,9 +1,23 @@
-![Portada de la documentación](img/Captura%20de%20pantalla%202025-02-28%20131543.png)
+---
+title: Guía de Conceptos Fundamentales en Python
 
+---
 
-# 📘 Guía de Conceptos Fundamentales en Python
+![Portada de la documentación](img/python_image.png)
 
-## ¿Que es Python?
+# 
+
+## Índice
+
+1. [📘 ¿Qué es Python?](#qué-es-python)
+2. [🚀 Comprendiendo los `Condicionales` en Python](#comprendiendo-los-condicionales-en-python)
+3. [🔄 Los Bucles en Python y su Importancia](#los-bucles-en-python-y-su-importancia)
+4. [📋 Comprensión de Listas](#comprensión-de-listas)
+5. [🔧 Argumentos en Python: pasando información a las funciones](#argumentos-en-python-pasando-información-a-las-funciones)
+6. [⚡ Funciones Lambda](#funciones-lambda)
+7. [📦 Gestión de Paquetes con `pip`](#gestión-de-paquetes-con-pip)
+
+## 📘 ¿Que es Python?
 
 **`Python`** es un **lenguaje de programación de alto nivel** que se utiliza para desarrollar aplicaciones de todo tipo. A diferencia de otros lenguajes como Java o .NET, se trata de un **lenguaje interpretado**, es decir, que no es necesario compilarlo para ejecutar las aplicaciones escritas en Python, sino que se ejecutan directamente por el ordenador utilizando un programa denominado interpretador, por lo que no es necesario “traducirlo” a lenguaje máquina.
 
@@ -27,9 +41,9 @@ Según el creador Guido Van Rossum, el nombre de este lenguaje se deriva de la s
 
 A menudo tenemos que tomar decisiones en nuestras vidas. Por ejemplo cuando digo “si llueve cojo el paraguas”, la acción de que coja el paraguas se producirá en caso de que se cumpla la condición de que está lloviendo. Esto traducido a la programación significa que cierta parte del código **sólo se ejecutará en caso de que se cumplan ciertas condiciones**.
 
- Las `sentencias condicionales` cumplen con dicha función. Nos ayudan a controlar el flujo de nuestro programa, decidiendo si unas líneas de código se tienen que ejecutar en función de si se cumplen unas condiciones preestablecidas. En concreto, **comprueban si una condición es verdadera o falsa** para tomar o no cierta acción.
+![Diagrama de Condicionales](img/Estructurascondicionales.jpg)
 
-![Diagrama de Condicionales](img/if_then_flowchart-Photoroom.png)
+ Las `sentencias condicionales` cumplen con dicha función. Nos ayudan a controlar el flujo de nuestro programa, decidiendo si unas líneas de código se tienen que ejecutar en función de si se cumplen unas condiciones preestablecidas. En concreto, **comprueban si una condición es verdadera o falsa** para tomar o no cierta acción.
 
 ### 🔹 ¿Para qué se usan los condicionales?
 - Para ejecutar diferentes acciones según las condiciones dadas.
@@ -44,7 +58,6 @@ La declaración `if` se usa para **evaluar una expresión**. Si la expresión de
 
 ⚠️ Es importante señalar que la declaración condicional `if` en Python realiza una **conversión automática a booleano** de la expresión proporcionada.
 
----
 ```python
 edad = 18
 if edad >= 18:
@@ -52,7 +65,6 @@ if edad >= 18:
 
 # Output: Eres mayor de edad
 ```
----
 
 📌 **Explicación:**
 - Se declara una variable `edad` con valor `18`.
@@ -63,7 +75,7 @@ if edad >= 18:
 
 En Python, la declaración `else` se utiliza en conjunto con una declaración `if`. La declaración else se ejecuta únicamente si la **condición evaluada por la declaración if resulta ser falsa**. En otras palabras, cuando la instrucción dentro del if no se ejecuta debido a que la condición es falsa, entonces la instrucción dentro del bloque else es la que se ejecuta. Esto proporciona una bifurcación en la lógica del programa, permitiendo definir acciones alternativas cuando la condición inicial no se cumple.
 
----
+
 ```python
 edad = 16
 if edad >= 18:
@@ -73,7 +85,6 @@ else:
 
 # Output:  Eres menor de edad
 ```
----
 
 📌 **Explicación:**
 - Se define `edad = 16`.
@@ -87,7 +98,7 @@ La declaración `elif` es útil para añadir situasiones adicionales a la evalua
 
 ⚠️ Es importante destacar que es posible **anidar varias declaraciones elif** según la necesidad y criterio del desarrollador. Esto proporciona **flexibilidad** en la lógica del programa al permitir manejar diferentes escenarios en función de las condiciones evaluadas.
 
----
+
 ```python
 nota = 8
 if nota >= 9:
@@ -99,7 +110,6 @@ else:
 
 # Output: Aprobado
 ```
----
 
 📌 **Explicación:**
 - Se evalúa `nota`.
@@ -119,7 +129,7 @@ else:
 
 Los `bucles` sirven para que los programas **implementen iteraciones**, es decir, ejecuten un mismo bloque de código dos o más veces mientras se cumple la condición declarada. Cuando la condición llega a ser **falsa**, el programa **sale del bucle** y continúa con su ejecución de forma secuencial.
 
-![Diagrama de Bucles](img/WhileloopinC2-removebg-preview.png)
+![Diagrama de Bucles](img/bucle-for.png)
 
 ###  **Tipos de Bucles en Python**
 
@@ -131,7 +141,7 @@ Cuando **se sabe el número exacto de repeticiones** del código en Python, se a
 
 El bucle `for` se crea de esta manera: `for<elem> in <iterable>: <bloque de código>`. En este caso, `elem` hace referencia a la **variable** de la que parte el iterador mientras que el `iterable` es el elemento sobre el que variable aplica el loop. En este caso, el bucle se repetirá hasta que se completen todos los valores de la secuencia de elementos del iterable.
 
----
+
 ```python
 for num in range(3):
     print(f"Iteración {num}")
@@ -142,7 +152,6 @@ Iteración 1
 Iteración 2
 """
 ```
----
 
 📌 **Explicación:**
 - `range(3)` genera los números `0, 1, 2` (el 3 no está incluido).
@@ -152,7 +161,6 @@ Iteración 2
 
 Es una **estructura de control** que **repite un bloque de código mientras se cumpla una condición específica**. Es uno de los bucles más comunes y se utiliza cuando no se sabe cuántas veces se necesita repetir un conjunto de instrucciones, pero sí la condición que debe cumplirse para continuar.
 
----
 ```python
 contador = 0
 while contador < 5:
@@ -167,7 +175,7 @@ Contador: 3
 Contador: 4
 """
 ```
----
+
 📌 **Explicación:**
 
 - Se inicializa la variable **contador** con el valor 0.
@@ -188,7 +196,7 @@ El `break` **termina el bucle** y ejecuta el bloque de código que está despué
 
 Veamos un ejemplo utilizando `break` para salir de un bucle `for`:
 
----
+
 ```python
 frutas = ["manzana", "banana", "cereza", "sandía", "uva"]
 
@@ -205,8 +213,6 @@ sandía
 """
 ```
 
----
-
 📌 **Explicación:**
 
 - Se define una `lista` llamada frutas con cinco elementos.
@@ -220,7 +226,6 @@ En cada iteración:
 
 Por otro lado, el `continue` nos permite **saltar a la siguiente iteración** sin ejecutar el resto del bloque de código para esa iteración. Veamos un ejemplo:
 
----
 ```python
 numeros = [1, 2, 3, 4, 5]
 
@@ -236,7 +241,6 @@ Output:
 5
 """
 ```
----
 
 📌 **Explicación:**
 
@@ -258,7 +262,7 @@ Dentro del bucle:
 
 ## 📋 Comprensión de Listas
 
-![Ejemplo de Lista de Comprensión](img/listcomprehensionsx628-removebg-preview.png)
+![Ejemplo de Lista de Comprensión](img/listcomprehension.png)
 
 Una `lista de compresión` es una sintaxis concisa para crear una lista a partir de un **rango** o de un **objeto iterable**, aplicando una operación determinada a cada uno de sus elementos. Funciona mucho más rápido que sus alternativas, como los bucles for, las funciones lambda, las condicionales, etc.
 
@@ -270,16 +274,14 @@ Cuando necesitamos crear una lista Python a partir de un objeto rango o un itera
 
 Los principales elementos de la sintaxis son los **corchetes** que rodean las **listas de compresión**, una **variable** que se refiere a cada elemento de una secuencia de entrada, una **expresión a evaluar**, la **colección** (o colecciones) de datos a la que se aplica la expresión, las palabras clave obligatorias **for** e **in**, las palabras clave **if**, **else**, **not** (cuando sea necesario), **operadores matemáticos** y **de comparación**.
 
-Ejemplo de **`comprensión de listas`:**
+Ejemplo de `comprensión de listas`:
 
----
 ```python
 numeros = [x for x in range(10) if x % 2 == 0]
 print(numeros)
 
 # Output: [0, 2, 4, 6, 8]
 ```
----
 
 📌 **¿Qué hace este código?**
 
@@ -296,16 +298,14 @@ print(numeros)
 
 #### **Ejemplo: Generación de una lista de cuadrados**
 
----
+
 ```python
 cuadrados = [x**2 for x in range(10)]
 print(cuadrados)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
----
 
 **Comprensión de listas con cadenas**
 
----
 ```python
 autores = ["jane austen", "george orwell", "james clear", "cal newport"]
 
@@ -316,15 +316,14 @@ print(lista_de_autores)
 ['Jane Austen', 'George Orwell', 'James Clear', 'Cal Newport']
 """
 ```
----
 
 ⚠️ El uso de la `comprensión de listas` resulta fundamental, ya que permite simplificar el código y minimizar la necesidad de recurrir a bucles **for** tradicionales, lo que contribuye a una mayor claridad y eficiencia en el rendimiento del programa. Esta técnica ofrece la posibilidad de aplicar filtros y transformaciones de manera directa y concisa, facilitando así la manipulación de datos sin comprometer la legibilidad.
 
 ## 🔧 Argumentos en Python: pasando información a las funciones
 
-![Argumentos en Python](img/arg.jpg)
-
 Los valores que se reciben una `función`  se denominan `parámetros`, pero durante la llamada los valores que se envían se denominan `argumentos`.
+
+![Argumentos en Python](img/arg.jpg)
 
 La **flexibilidad** y **adaptabilidad** que ofrecen las funciones Python en el manejo de `argumentos` es una característica única en el lenguaje, lo que lo convierte en una herramienta poderosa para el desarrollo de aplicaciones complejas.
 
@@ -337,7 +336,6 @@ Existen diferentes tipos de argumentos que se pueden pasar a una función en Pyt
 Son los argumentos que se envían a una función en el **orden en que se definieron**, es decir, el primer argumento será el primero que se envíe, el segundo será el segundo, y así sucesivamente.
 Utilizar `argumentos posicionales` puede ser muy útil cuando se requiere una flexibilidad de argumentos, ya que, al enviar los argumentos en orden, no es necesario preocuparse por escribir la lista completa de argumentos y sus valores en la llamada a la función.
 
----
 ```python
 def informacion_persona(nombre, edad, ciudad):
     print(f"{nombre} tiene {edad} años y vive en {ciudad}")
@@ -346,7 +344,6 @@ informacion_persona("Juan", 25, "Madrid")
 
 # Output: Juan tiene 25 años y vive en Madrid
 ```
----
 
 📌 **Análisis del código**
 
@@ -354,7 +351,6 @@ La **función informacion_persona** recibe tres **argumentos posicionales**, nom
 
 ⚠️ Es **importante** notar que, aunque el orden en que se envían los argumentos es importante en las funciones con argumentos posicionales, también es posible definir valores por defecto para los argumentos en caso de no ser específicados en la llamada a la función.
 
----
 ```python
 def informacion_persona(nombre, edad=18, ciudad="Desconocida"):
     print(f"{nombre} tiene {edad} años y vive en {ciudad}.")
@@ -363,7 +359,6 @@ informacion_persona("María")
 
 # Output: María tiene 18 años y vive en Desconocida.
 ```
----
 
 📌 **Análisis del código**
 
@@ -375,17 +370,14 @@ En este ejemplo, se define un valor por defecto de edad=18 y ciudad="Desconocida
 
 Son aquellos que se definen mediante una palabra clave seguida de un signo igual y su valor correspondiente. Por ejemplo, en una función que recibe los argumentos nombre y edad, podríamos utilizar la siguiente sintaxis para llamar a la función:
 
----
 ```python
  mi_funcion(nombre="Juan", edad=25)
 ```
----
 
  Este tipo de argumentos proporcionan una mayor **claridad y legibilidad al código**.
 
  Ahora bien, ¿cómo podemos utilizar argumentos con palabras clave en Python? La respuesta es sencilla: basta con declarar los argumentos de nuestra función de la forma **argumento=valor**. Veamos un ejemplo sencillo:
 
----
 ```python
 def suma_numeros(num1, num2, mostrar_resultado=False):
     resultado = num1 + num2
@@ -394,11 +386,10 @@ def suma_numeros(num1, num2, mostrar_resultado=False):
     return resultado
 
 resultado = suma_numeros(3, 4)
-# resultado es 7
+# Output: 7
 resultado = suma_numeros(3, 4, mostrar_resultado=True)
-# imprime "El resultado de la suma es: 7" y asigna 7 a resultado
+# Output:  "El resultado de la suma es: 7" y asigna 7 a resultado
 ```
----
 
 📌 **Análisis del código**
 
@@ -412,21 +403,17 @@ Son valores que se asignan a los parámetros de una función en caso de que **no
 
 Para utilizar `argumentos por defecto` en Python, se puede proporcionar un `valor predeterminado` al definir los parámetros de una función. Por ejemplo, consideremos la siguiente función que toma dos argumentos y los **concatena**:
 
----
 ```python
 def concatenar(a, b):
     return a + b
 ```
----
 
 Si no se proporciona algún valor para los argumentos `a` y `b` al llamar a la función, se producirá un **error**. Para evitar esto, podemos proporcionar valores por defecto para `a` y `b`. Por ejemplo:
 
----
 ```python
 def concatenar(a = "", b = ""):
     return a + b
 ```
----
 
 En este ejemplo, se proporcionan dos valores por defecto para `a` y `b`. Si no se proporciona un valor para `a` o `b` al llamar a la función, se utilizarán estos valores predeterminados.
 
@@ -434,35 +421,28 @@ Usar valores por defecto como `""` en parámetros de tipo `str` es una **buena p
 
 ⚠️ Es importante tener en cuenta que los valores por defecto solo se evalúan una vez, al definir la función. Esto significa que si se usa un objeto mutable (por ejemplo, una lista o un diccionario) como valor por defecto, se pueden producir **resultados inesperados**. En el siguiente ejemplo, se usará una lista como valor predeterminado para el parámetro **lista**:
 
----
 ```python
 def agregar_elemento(elemento, lista=[]):
     lista.append(elemento)
     return lista
 ```
----
 
 Al llamar a esta función **sin proporcionar una lista**, se **utilizará** la **lista predeterminada**:
 
----
 ```python
 print(agregar_elemento(1))
 # Output: [1]
 ```
----
 
 Si llamamos a la función de nuevo con un **objeto diferente**, veremos que ambas llamadas a la función están añadiendo el elemento a la misma lista:
 
----
 ```python
 print(agregar_elemento(2))
 #Output: [1, 2]
 ```
----
 
 ⚠️ Para evitar este comportamiento inesperado, podemos utilizar un `valor por defecto` que no sea un objeto mutable. Por ejemplo, podemos usar `None` y luego dentro de la función creamos la lista o cualquier objeto que deseemos usar.
 
----
 ```python
 def agregar_elemento(elemento, lista=None):
     if lista is None:  # Se crea una nueva lista en cada llamada si no se proporciona una
@@ -475,7 +455,6 @@ print(agregar_elemento(1))  # Output: [1]
 print(agregar_elemento(2))  # Output: [2], no mantiene el estado anterior
 print(agregar_elemento(3, [10, 20]))  # Output: [10, 20, 3], usa la lista proporcionada
 ```
----
 
 ✅ Buenas prácticas con valores por defecto en funciones:
 -  Definir valores predeterminados adecuados según el tipo de dato esperado.
@@ -493,20 +472,17 @@ Los `argumentos variables` en Python se definen con el operador `*` antes del no
 
  De esta manera, cuando se utiliza la función con estos argumentos variables se pueden pasar tantos elementos como se quiera. Por ejemplo, supongamos que deseamos definir una función que calcule el promedio de un conjunto de números. Eine forma de hacerlo es mediante una función que reciba una lista de elementos como argumento:
 
----
 ```python
 def promedio(num):
     return sum(num) / len(num)
 
-print(promedio([1, 2, 3, 4])) 
+print(promedio([1, 2, 3, 4]))
 
-# output: 2.5
+# Output: 2.5
 ```
----
 
-Sin embargo, si queremos calcular el promedio de un número indeterminado de elementos, debemos utilizar argumentos variables. Para ello, simplemente agregamos un * delante del nombre del argumento, y luego podemos trabajar con él como si se tratara de una lista:
+Sin embargo, si queremos calcular el **promedio** de un número indeterminado de elementos, debemos utilizar argumentos variables. Para ello, simplemente agregamos un * delante del nombre del argumento, y luego podemos trabajar con él como si se tratara de una lista:
 
----
 ```python
 def promedio(*args):
     return sum(args) / len(args)
@@ -515,7 +491,6 @@ print(promedio(1, 2, 3, 4)) # output: 2.5
 print(promedio(1, 2)) # output: 1.5
 print(promedio(3, 6, 9, 12, 15)) # output: 9
 ```
----
 
 📌 **¿Qué hicimos aqui?**
 
@@ -523,7 +498,6 @@ En este caso, la **función promedio** recibe un **número indeterminado** de el
 
 Otra forma de manejar una cantidad variable de argumentos en Python es utilizando el doble operador **. Si usamos este operador antes del nombre de un argumento, Python creará un diccionario con los nombres de los argumentos como llaves y los valores como valores. Por ejemplo, considera la siguiente función imprimir_kwargs:
 
----
 ```python
 def imprimir_kwargs(**kwargs):
     for key, value in kwargs.items():
@@ -537,11 +511,9 @@ nombre: Juan
 edad: 30
 """
 ```
----
 
 Podemos combinar ambas técnicas para crear una función que maneje tanto argumentos sin nombre como argumentos con nombre. Por ejemplo:
 
----
 ```python
 def imprimir_todo(*args, **kwargs):
     for arg in args:
@@ -561,17 +533,16 @@ nombre: Juan
 edad: 30
 """
 ```
----
 
 ❗ Python ofrece una gran flexibilidad en cuanto al manejo de argumentos en funciones. Podemos utilizar argumentos de longitud variable para crear funciones con mayor adaptabilidad y flexibilidad. Esto nos permite crear funciones más versátiles y eficientes en nuestro código.
 
 
 
-## ⚡ Funciones Lambda: creando funciones anónimas en una línea
-
-![Ejemplo de Función Lambda](img/Lamda-function-Python.png)
+## ⚡ Funciones Lambda
 
 En Python, una `función lambda` se refiere a una pequeña **función anónima**. Las llamamos “funciones anónimas” porque técnicamente carecen de nombre.
+
+![Ejemplo de Función Lambda](img/Lamda-function-Python.png)
 
 Al contrario que una función normal, no la definimos con la palabra clave estándar `def` que utilizamos en Python. En su lugar, las funciones `Lambda` se definen como una línea que ejecuta una sola expresión. Este tipo de funciones pueden tomar cualquier número de argumentos, pero solo pueden tener **una expresión.**
 
@@ -585,7 +556,6 @@ Una de las ventajas de las funciones lambda es que pueden crear expresiones más
 
 Un ejemplo sencillo de esto es la creación de una función que eleve al cuadrado un número:
 
----
 ```python
 def cuadrado(num):
     return num**2
@@ -597,12 +567,11 @@ cuadrado_lambda = lambda num: num**2
 print(cuadrado(5)) # Output: 25
 print(cuadrado_lambda(5)) # Output: 25
 ```
----
+
 Como se puede ver, la función lambda es mucho más compacta que la función normal.
 
 Otra ventaja de las funciones lambda es que son muy flexibles. Pueden ser utilizadas en cualquier lugar donde se requiera una función, como parámetros de otras funciones, en expresiones aritméticas o en la definición de estructuras de datos como listas y diccionarios.
 
----
 ```python
 numeros = [1, 2, 3, 4, 5]
 
@@ -610,7 +579,6 @@ resultado = list(map(lambda x: x**2, numeros))
 
 print(resultado) # Output: [1, 4, 9, 16, 25]
 ```
----
 
 📌 **¿Qué hicimos aqui?**
 
@@ -620,9 +588,8 @@ Hemos utilizado la función `map` para aplicar la función `lambda` que devuelve
 
 Las funciones `lambda` son una forma compacta de crear pequeñas funciones anónimas en Python. Son especialmente útiles cuando necesitamos crear una función rápida o sencilla en tiempo de ejecución sin tener que escribir todo el código de una función definida normal.
 
-🛑 Un ejemplo de uso común es con la función built-in `filter()`, la cual recibe una función como argumento que devuelve un valor **booleano**:
+💡 Un ejemplo de uso común es con la función built-in `filter()`, la cual recibe una función como argumento que devuelve un valor **booleano**:
 
----
 ```python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 pares = list(filter(lambda x: x%2==0, numeros))
@@ -630,16 +597,14 @@ print(pares)
 
 # Output: [2, 4, 6, 8, 10]
 ```
----
 
 📌 **¿Qué hicimos aqui?**
 
 - `filter()` retorna una lista con aquellos elementos de la secuencia que, al ser aplicados a la función, resultan en un valor `True`.
 - para filtrar los números pares de una lista, hemos usado la función lambda `lambda x: x%2==0` la cual retorna `True`  cuando el número es par.
 
-🛑 Otro ejemplo de aplicación es con la función `map()`, la cual aplica una función a cada uno de los elementos de una secuencia.
+💡 Otro ejemplo de aplicación es con la función `map()`, la cual aplica una función a cada uno de los elementos de una secuencia.
 
----
 ```python
 numeros = [1, 2, 3, 4, 5]
 cuadrados = list(map(lambda x: x**2, numeros))
@@ -647,21 +612,20 @@ print(cuadrados)
 
 # Output: [1, 4, 9, 16, 25]
 ```
----
 
 📌 **Análisis del código**
 
 - Para obtener el cuadrado de todos los números de una lista, hemos usado la función lambda `lambda x: x**2` en combinación con `map()`
 
-🛑 También podemos usar funciones lambda en combinación con la función `sorted()` para **ordenar una lista** de acuerdo a un criterio específico
+💡 También podemos usar funciones lambda en combinación con la función `sorted()` para **ordenar una lista** de acuerdo a un criterio específico
 
----
-```PYTHON
+```python
 palabras = ["manzana", "banana", "durazno", "kiwi"]
 ordenado_por_longitud = sorted(palabras, key=lambda x: len(x))
-print(ordenado_por_longitud) #["kiwi", "banana", "durazno", "manzana"]
+print(ordenado_por_longitud)
+
+# Output: ["kiwi", "banana", "durazno", "manzana"]
 ```
----
 
 📌 **¿Que hemos hecho?**
 
@@ -670,12 +634,13 @@ print(ordenado_por_longitud) #["kiwi", "banana", "durazno", "manzana"]
 ❗ Es importante considerar cuidadosamente el uso de funciones lambda en un proyecto. Aunque son muy útiles para crear expresiones funcionales compactas, no deben reemplazar completamente a las funciones convencionales y se deben utilizar solo en situaciones específicas en las que se requieren funciones pequeñas y simples. También es importante tener en cuenta consideraciones de legibilidad, eficiencia y manejo de excepciones al utilizarlas en el código.
 
 
-## 📦 Gestión de Paquetes con `pip`: Instalando Librerías en Python
+## 📦 Gestión de Paquetes con `pip`
+
+`pip` es el **administrador de paquetes de Python**, su nombre proviene de `“Pip Installs Packages”`. Con `pip`, podemos **instalar, actualizar y desinstalar** paquetes de Python de manera sencilla.
 
 ![Diagrama de pip](img/pip-instal.png)
 
-`pip` es el **administrador de paquetes de Python**, su nombre proviene de `“Pip Installs Packages”`. Con `pip`, podemos **instalar, actualizar y desinstalar** paquetes de Python de manera sencilla. El sistema de gestión se asegura de que todas las dependencias se instalan correctamente y siempre mantiene todo actualizado. Además, `pip` tiene una gran cantidad de paquetes disponibles, por lo que siempre puede encontrar lo que necesita.
-
+El sistema de gestión se asegura de que todas las dependencias se instalan correctamente y siempre mantiene todo actualizado. Además, `pip` tiene una gran cantidad de paquetes disponibles, por lo que siempre puede encontrar lo que necesita.
 
 ### 🔹 Instalación y actualización de `pip`
 
@@ -685,11 +650,9 @@ En la mayoría de las distribuciones de Python modernas, pip ya está incluido d
 
 Primero verifica si `pip` esta instalado. Abre una terminal o línea de comandos y ejecuta el siguiente comando:
 
----
   ```sh
   pip --version
   ```
----
 
 Si **pip está instalado**, verás información sobre la **versión**. Si no, verás un mensaje de error.
 
@@ -699,7 +662,6 @@ Si **pip está instalado**, verás información sobre la **versión**. Si no, ve
 
 Si `pip` no está instalado, podemos instalarlo utilizando el siguiente comando:
 
----
   ```sh
   # Para Windows:
   python get-pip.py
@@ -707,46 +669,38 @@ Si `pip` no está instalado, podemos instalarlo utilizando el siguiente comando:
   # Para Linux o MacOS:
   sudo apt-get install python3-pip
   ```
----
+
 ✅ **Instalar un paquete:**
 
 Para instalar un paquete, utilizamos el comando `pip install nombre_del_paquete`. Por ejemplo, para instalar `requests`, un paquete comúnmente utilizado para hacer solicitudes HTTP en Python:
 
----
   ```sh
   pip install requests
   ```
----
 
 ✅ **Desinstalar un paquete:**
 
 Si ya no necesitamos un paquete, podemos desinstalarlo con `pip uninstall nombre_del_paquete`. Por ejemplo, para desinstalar `requests`:
 
----
   ```sh
   pip uninstall requests
   ```
----
 
 ✅ **Listar paquetes instalados:**
 
 Podemos ver una lista de los paquetes instalados en nuestro entorno con `pip list´. Esto mostrará los paquetes y sus versiones.
 
----
   ```sh
   pip list
   ```
----
 
 ✅ **Actualizar un paquete:**
 
 Para actualizar un paquete a su última versión, utilizamos `pip install --upgrade nombre_del_paquete`.
 
----
   ```sh
   pip install --upgrade requests
   ```
----
 
 ✅ **Fichero requirements.txt:**
 
@@ -754,26 +708,23 @@ En muchos proyectos, es común tener un archivo requirements.txt que lista todos
 
 Supongamos que tenemos un archivo requirements.txt con el siguiente contenido:
 
-```ini
-Flask==2.0.2
-requests==2.26.0
-numpy==1.21.2
-```
+  ```ini
+  Flask==2.0.2
+  requests==2.26.0
+  numpy==1.21.2
+  ```
 
 Para instalar todos estos paquetes, ejecutamos:
 
----
   ```sh
   pip install -r requirements.txt
   ```
----
 
 Esto instalará los paquetes Flask, requests y numpy con las versiones especificadas en el archivo.
 
 ### 🔹 Uso de una Biblioteca Instalada
 Cuando instalamos una biblioteca en Python mediante `pip`, podemos importarla y utilizar sus funcionalidades dentro de nuestro código. A continuación, veremos un ejemplo en el que usamos la biblioteca `requests` para realizar una **solicitud HTTP a la API de GitHub**.
 
----
 ```python
 import requests
 
@@ -783,7 +734,6 @@ respuesta = requests.get("https://api.github.com")
 # Imprime el código de estado de la respuesta
 print(respuesta.status_code)
 ```
----
 
 📌 **Análisis del código**
 
@@ -791,23 +741,19 @@ print(respuesta.status_code)
 
 2️⃣ **Realización de una solicitud HTTP GET**
 
----
 ```python
 respuesta = requests.get("https://api.github.com")
 
 ```
----
 
 - Se usa `requests.get(url)` para hacer una solicitud **GET** a la **API** pública de GitHub.
 - ` respuesta`  almacena la información devuelta por el servidor, incluyendo datos de la respuesta y el código de estado **HTTP**.
 
 3️⃣ **Impresión del código de estado**
 
----
 ```python
 print(respuesta.status_code)
 ```
----
 
 - `respuesta.status_code` devuelve el código de estado HTTP de la solicitud.
 - Algunos códigos de estado comunes son:
@@ -820,11 +766,11 @@ print(respuesta.status_code)
 - Es útil para automatizar consultas, como obtener datos de redes sociales, clima, noticias, etc.
 - La biblioteca requests simplifica las peticiones HTTP comparado con métodos más complejos como urllib.
 
-❗ Pip es una herramienta muy poderosa que nos facilita enormemente la tarea de administrar las dependencias de nuestros proyectos. Además de la instalación de paquetes de terceros, Pip nos permite crear ambientes virtuales aislados y manejar paquetes privados de manera sencilla. En resumen, Pip es una de las herramientas básicas que todo desarrollador de Python debería conocer para optimizar su trabajo.
+❗ `Pip` es una herramienta muy poderosa que nos facilita enormemente la tarea de administrar las dependencias de nuestros proyectos. Además de la instalación de paquetes de terceros, Pip nos permite crear ambientes virtuales aislados y manejar paquetes privados de manera sencilla. En resumen, Pip es una de las herramientas básicas que todo desarrollador de Python debería conocer para optimizar su trabajo.
 
 A lo largo de este recorrido, hemos cubierto lo esencial para empezar a programar en Python, desde el uso de condicionales hasta la creación de funciones y el manejo de bibliotecas externas. Python es un lenguaje poderoso y accesible, ideal tanto para principiantes como para desarrolladores experimentados.
 
-💡 Y recuerda que `un error en el código no es un fallo, ¡es una oportunidad para aprender algo nuevo!`
+💡 Y recuerda que un error en el código no es un fallo, **¡es una oportunidad para aprender algo nuevo!**
 
 
 📚 Para más información, puedes consultar la [documentación oficial de Python](https://docs.python.org/es/3.13/tutorial/index.html).
