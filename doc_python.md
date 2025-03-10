@@ -366,14 +366,6 @@ print(Calculadora.sumar(5, 3))  # Salida: 8
 - `@staticmethod` define un método independiente.
 - No usa `self` ni `cls`, ya que no accede a atributos del objeto ni de la clase.
 
-❗ Conclusión:
-
-✅ `Métodos de Instancia` → Usan `self` y operan sobre el objeto.
-
-✅ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
-
-✅ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la clase ni de la instancia.
-
 4️⃣ `Métodos de Clase` (`@classmethod`)
 
 Modifican o acceden a atributos de clase en lugar de atributos de instancia.
@@ -397,6 +389,14 @@ print(Mascota.especie)  # Salida: Gato
 
 - `@classmethod` permite modificar especie, que es un atributo de clase.
 - Se usa `cls` en lugar de `self` para referirse a la clase
+
+❗ Conclusión:
+
+✅ `Métodos de Instancia` → Usan `self` y operan sobre el objeto.
+
+✅ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
+
+✅ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la clase ni de la instancia.
 
 ### 1.5 Cómo pasar argumentos a los métodos
 
