@@ -61,7 +61,7 @@
 
 ## 1. Las clases en Python
 
-Python soporta la programación orientada a objetos (POO). Esto quiere decir que podemos definir entidades agrupando (encapsulando) sus `atributos` y `métodos` (comportamientos) en `clases`.
+Python soporta la programación orientada a objetos (`POO`). Esto quiere decir que podemos definir entidades agrupando (encapsulando) sus `atributos` y `métodos` (comportamientos) en `clases`.
 
 ![ejemplo de Clases en Python](img/clases_py.png)
 
@@ -100,7 +100,7 @@ persona_uno.presentacion()
 
 ### 1.2 Instanciar un objeto
 
-En Python, la instanciación de objetos es el proceso mediante el cual creamos una instancia (un objeto concreto) a partir de una clase. Una clase es una plantilla que define atributos y métodos, mientras que un objeto es una instancia de esa plantilla con valores específicos. Para instanciar un objeto, utilizamos el nombre de la clase seguido de paréntesis, pasando los valores necesarios si el constructor (__init__) lo requiere.
+En Python, la `instanciación de objetos` es el proceso mediante el cual creamos una instancia (un objeto concreto) a partir de una clase. Una clase es una plantilla que define atributos y métodos, mientras que un objeto es una instancia de esa plantilla con valores específicos. Para instanciar un objeto, utilizamos el nombre de la clase seguido de paréntesis, pasando los valores necesarios si el constructor (__init__) lo requiere.
 
 ```python
 class Perro:
@@ -120,12 +120,14 @@ print(perro1.ladrar())  # Output: Max está ladrando. ¡Guau, guau!
 print(perro2.ladrar())  # Output: Luna está ladrando. ¡Guau, guau!
 ```
 
-📌 Explicación del código::
+📌 Explicación del código:
+
 - Definimos la clase Perro, que tiene dos atributos (nombre y raza) y un método (ladrar()).
 - Creamos dos objetos (perro1 y perro2), pasando valores específicos a la clase Perro.
 - Llamamos al método ladrar() para cada objeto, lo que imprime un mensaje personalizado.
 
 ❗ Conclusión:
+
 La instanciación en Python nos permite crear múltiples objetos a partir de una clase, cada uno con sus propios datos, pero compartiendo los métodos definidos en la clase.
 
 ### 1.3 Añadir atributos a una clase
@@ -175,7 +177,7 @@ print(coche2.marca, coche2.modelo)  # Salida: Honda Civic
 
 ✅ Los atributos de clase son `compartidos` por todas las instancias.
 ✅ Los atributos de instancia son `únicos` para cada objeto.
-✅ Usar `self` dentro del __init__() permite definir atributos específicos para cada objeto.
+✅ Usar `self` dentro del `__init__()` permite definir `atributos` específicos para cada objeto.
 
 Además de la distinción entre `atributos de clase` e `instancia`, los atributos pueden tener diferentes `niveles de visibilidad`, que en Python se indican mediante convenciones de nomenclatura en lugar de palabras clave como en otros lenguajes de programación. Los atributos `private` y `protected` en Python se definen de manera diferente, y es importante conocer sus diferencias para seguir buenas prácticas de programación.
 
@@ -276,12 +278,16 @@ print(vehiculo._color)  # Salida: Rojo
 
 En Python, los métodos son funciones que se definen dentro de una clase y que operan sobre los objetos creados a partir de esa clase. Los métodos permiten manipular los atributos del objeto y definir su comportamiento.
 
-Tipos de Métodos en una Clase
-1️⃣ Métodos de Instancia → Usan self y trabajan con atributos del objeto.
-2️⃣ Métodos de Clase → Usan @classmethod y cls para modificar atributos de clase.
-3️⃣ Métodos Estáticos → Usan @staticmethod y no dependen de la instancia ni de la clase.
+`Tipos de Métodos en una Clase`:
 
-####  1.4.1 Métodos de Instancia
+1️⃣ `Métodos de Instancia` → Usan `self` y trabajan con atributos del objeto.
+
+2️⃣ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
+
+3️⃣ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la instancia ni de la clase.
+
+1️⃣ `Métodos de Instancia`
+
 Son los más comunes y operan sobre un objeto específico.
 
 🔹 Ejemplo:
@@ -301,10 +307,11 @@ print(persona1.presentarse())  # Salida: Hola, soy Carlos y tengo 30 años.
 ```
 
 📌 Explicación:
-- self.nombre y self.edad son atributos del objeto.
-- presentarse() usa self para acceder a estos atributos.
 
-#### 1.4.2 Métodos de Clase (@classmethod)
+- `self.nombre` y `self.edad` son atributos del objeto.
+- `presentarse()` usa `self` para acceder a estos atributos.
+
+2️⃣ `Métodos de Clase` (`@classmethod`)
 
 Modifican o acceden a atributos de clase en lugar de atributos de instancia.
 
@@ -325,10 +332,10 @@ print(Mascota.especie)  # Salida: Gato
 
 📌 Explicación:
 
-- @classmethod permite modificar especie, que es un atributo de clase.
-- Se usa cls en lugar de self para referirse a la clase
+- `@classmethod` permite modificar especie, que es un atributo de clase.
+- Se usa `cls` en lugar de `self` para referirse a la clase
 
-#### 1.4.3 Métodos Estáticos (@staticmethod)
+3️⃣ `Métodos Estáticos` (`@staticmethod`)
 
 No dependen ni de la clase ni de la instancia. Se usan para utilidades.
 
@@ -345,14 +352,18 @@ print(Calculadora.sumar(5, 3))  # Salida: 8
 ```
 
 📌 Explicación:
-- @staticmethod define un método independiente.
-- No usa self ni cls, ya que no accede a atributos del objeto ni de la clase.
+
+- `@staticmethod` define un método independiente.
+- No usa `self` ni `cls`, ya que no accede a atributos del objeto ni de la clase.
 
 ❗ Conclusión:
 
-✅ Métodos de Instancia → Usan self y operan sobre el objeto.
-✅ Métodos de Clase → Usan @classmethod y cls para modificar atributos de clase.
-✅ Métodos Estáticos → Usan @staticmethod y no dependen de la clase ni de la instancia.
+✅ `Métodos de Instancia` → Usan `self` y operan sobre el objeto.
+
+✅ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
+
+✅ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la clase ni de la instancia.
+
 
 ### 1.5 Cómo pasar argumentos a los métodos
 
@@ -360,7 +371,7 @@ En Python, los métodos dentro de una clase pueden recibir argumentos adicionale
 
 1️⃣ Pasar Argumentos a Métodos de Instancia
 
-Los métodos de instancia reciben self como primer parámetro y pueden aceptar otros argumentos personalizados para operar sobre atributos específicos del objeto.
+Los métodos de instancia reciben `self` como primer parámetro y pueden aceptar otros argumentos personalizados para operar sobre atributos específicos del objeto.
 
 🔹 Ejemplo:
 
@@ -385,7 +396,7 @@ print(resultado)  # Salida: 8
 
 2️⃣ Pasar Argumentos al Constructor (__init__)
 
-El método __init__() permite inicializar un objeto con valores específicos al momento de su creación.
+El método `__init__()` permite inicializar un objeto con valores específicos al momento de su creación.
 
 🔹 Ejemplo:
 
@@ -414,7 +425,7 @@ print(persona2.presentar())  # Salida: Hola, soy Ana y tengo 25 años.
 
 3️⃣ Pasar Argumentos a Métodos de Clase (@classmethod)
 
-Los métodos de clase (@classmethod) reciben cls en lugar de self y pueden aceptar otros argumentos para modificar atributos de clase.
+Los métodos de clase (`@classmethod`) reciben `cls` en lugar de `self` y pueden aceptar otros argumentos para modificar atributos de clase.
 
 🔹 Ejemplo:
 
@@ -438,7 +449,7 @@ print(Configuracion.idioma)  # Salida: Inglés
 
 4️⃣ Pasar Argumentos a Métodos Estáticos (@staticmethod)
 
-Los métodos estáticos (@staticmethod) pueden recibir cualquier número de argumentos, pero no tienen acceso a self ni cls.
+Los métodos estáticos (`@staticmethod`) pueden recibir cualquier número de argumentos, pero no tienen acceso a self ni cls.
 
 🔹 Ejemplo:
 
@@ -460,8 +471,11 @@ print(Conversor.convertir_celsius_a_fahrenheit(25))  # Salida: 77.0
 ❗ Conclusión:
 
 ✅ Métodos de Instancia → Pasan argumentos a través de self y operan sobre el objeto.
+
 ✅ Constructor (__init__) → Permite inicializar objetos con valores personalizados.
+
 ✅ Métodos de Clase (@classmethod) → Reciben cls y pueden modificar atributos de clase.
+
 ✅ Métodos Estáticos (@staticmethod) → Aceptan argumentos, pero no dependen de la clase ni del objeto.
 
 ### 1.6 Ventajas y desventajas del uso de las clases en Python
@@ -485,14 +499,16 @@ print(Conversor.convertir_celsius_a_fahrenheit(25))  # Salida: 77.0
 
 En Python, el método que se ejecuta automáticamente al crear una instancia de una clase es el `método constructor`, denominado `__init__()`. Este método se encarga de inicializar los atributos del objeto y establecer su estado inicial.
 
+![Método constructor __init__](img/init.png)
+
 ### 2.1 Método constructor
 El método `__init__` es el constructor de una clase en Python.
 
-1️⃣ ¿Qué es el método __init__()?
+1️⃣ ¿Qué es el método `__init__()`?
 
-El método __init__() es un método especial que pertenece a la clase y se ejecuta de forma automática cuando se instancia un objeto. Su propósito principal es asignar valores iniciales a los atributos del objeto.
+El método `__init__()` es un método especial que pertenece a la clase y se ejecuta de forma automática cuando se instancia un objeto. Su propósito principal es asignar valores iniciales a los atributos del objeto.
 
-Ejemplo básico:
+🔹 Ejemplo básico:
 
 ```python
 class Persona:
@@ -513,11 +529,11 @@ print(persona1.edad)    # Salida: 30
 - self.nombre = nombre y self.edad = edad asignan esos valores a los atributos del objeto.
 - Al crear persona1, automáticamente se ejecuta el __init__(), mostrando el mensaje "Se ha creado una nueva persona".
 
-2️⃣ ¿Es obligatorio definir el método __init__()?
+2️⃣ ¿Es obligatorio definir el método `__init__()`?
 
 No es obligatorio, pero si no se define, la clase usará un constructor por defecto sin parámetros y sin inicializar atributos.
 
-🔹 Ejemplo sin __init__():
+🔹 `Ejemplo sin __init__()`:
 
 ```python
 class Vehiculo:
@@ -527,7 +543,7 @@ coche = Vehiculo()  # Se crea el objeto sin inicialización
 print(coche)  # Salida: <__main__.Vehiculo object at 0x...>
 ```
 
-🔹 Ejemplo con __init__() para inicializar atributos:
+🔹 `Ejemplo con __init__()` para inicializar atributos:
 
 ```python
 class Vehiculo:
@@ -539,14 +555,15 @@ print(coche.marca)  # Salida: Toyota
 ```
 
 📌 Explicación:
--Cuando no definimos el método __init__() en una clase, como en el primer ejemplo, Python utiliza un constructor por defecto que no inicializa ningún atributo ni recibe parámetros adicionales. El objeto se crea, pero sin atributos específicos.
-- En cambio, al definir __init__() como en el segundo ejemplo, podemos inicializar atributos al momento de crear el objeto, proporcionando valores específicos a través de los parámetros del constructor. Esto da más control y flexibilidad sobre cómo se crean y configuran los objetos.
+
+-Cuando `no definimos el método __init__()` en una clase, como en el primer ejemplo, Python utiliza un constructor por defecto que no inicializa ningún atributo ni recibe parámetros adicionales. El objeto se crea, pero sin atributos específicos.
+- En cambio, `al definir __init__()` como en el segundo ejemplo, podemos inicializar atributos al momento de crear el objeto, proporcionando valores específicos a través de los parámetros del constructor. Esto da más control y flexibilidad sobre cómo se crean y configuran los objetos.
 
 En resumen, la diferencia es que definir __init__() permite inicializar atributos con valores personalizados, mientras que no definirlo crea objetos sin inicialización de atributos.
 
-3️⃣ Personalización del __init__()
+3️⃣ Personalización del `__init__()`
 
-Podemos personalizar __init__() para incluir valores por defecto o validaciones.
+Podemos personalizar `__init__()` para incluir valores por defecto o validaciones.
 
 🔹 Ejemplo con valores por defecto:
 
@@ -564,19 +581,22 @@ print(producto2.nombre, producto2.precio)  # Salida: Desconocido 0
 ```
 
 📌 Explicación:
+
 Si no se proporcionan valores al instanciar Producto(), tomará "Desconocido" y 0 por defecto.
 
 Conclusión:
 
 ✅ El método __init__() es el constructor en Python y se ejecuta automáticamente al crear una instancia de una clase.
+
 ✅ Es útil para inicializar atributos y personalizar el estado del objeto desde su creación.
+
 ✅ No es obligatorio, pero proporciona flexibilidad y estructura a la programación orientada a objetos.
 
 ---
 
 ## 3. Introducción a las APIs en Python
 
-API significa "Application Programming Interface" o "Interfaz de Programación de Aplicaciones" en español. En términos simples, una API es un conjunto de reglas y definiciones que permiten que dos programas de software se comuniquen entre sí.
+`API` significa "Application Programming Interface" o "Interfaz de Programación de Aplicaciones" en español. En términos simples, una API es un conjunto de reglas y definiciones que permiten que dos programas de software se comuniquen entre sí.
 
 ![APIs en Python](img/apis.png)
 
@@ -599,7 +619,7 @@ Una API es un conjunto de reglas que define cómo dos aplicaciones pueden comuni
 
 ### 3.3 ¿Qué es un endpoint en una API?
 
-Un endpoint es una URL específica dentro de una API que permite acceder a una función o recurso determinado. Cada endpoint representa una acción o un conjunto de datos accesibles a través de la API.
+Un `endpoint` es una `URL` específica dentro de una `API` que permite acceder a una función o recurso determinado. Cada endpoint representa una acción o un conjunto de datos accesibles a través de la API.
 
 Por ejemplo, en la API de JSONPlaceholder:
 - https://jsonplaceholder.typicode.com/posts devuelve una lista de publicaciones.
@@ -616,30 +636,31 @@ UExisten diferentes tipos de APIs, pero las más comunes son:
 - APIs de bibliotecas: Se incluyen en paquetes de software para facilitar ciertas funciones.
 
 ### 3.5 APIs web y REST
-Las APIs web son muy populares porque permiten que diferentes sistemas se comuniquen a través de internet. Un tipo común de API web es la API REST (Representational State Transfer). 
-Estas APIs usan el protocolo HTTP para realizar operaciones como:
-- GET: Obtener datos.
-- POST: Enviar datos.
-- PUT: Actualizar datos.
-- DELETE: Eliminar datos.
+
+Las APIs web son muy populares porque permiten que diferentes sistemas se comuniquen a través de internet. Un tipo común de `API web` es la `API REST` (Representational State Transfer).
+
+Estas APIs usan el protocolo `HTTP` para realizar operaciones como:
+- `GET`: Obtener datos.
+- `POST`: Enviar datos.
+- `PUT`: Actualizar datos.
+- `DELETE`: Eliminar datos.
 
 ### 3.6 Comprender los códigos de estado de la API de Python
 
-Los códigos de estado de la API son respuestas estandarizadas que los servidores devuelven para indicar el resultado de la solicitud de un cliente. Estos códigos ayudan a los desarrolladores a saber si una solicitud se ha realizado correctamente, si se ha producido un error o si es necesario realizar alguna otra acción. 
+Los `códigos de estado` de la API son respuestas estandarizadas que los servidores devuelven para indicar el resultado de la solicitud de un cliente. Estos códigos ayudan a los desarrolladores a saber si una solicitud se ha realizado correctamente, si se ha producido un error o si es necesario realizar alguna otra acción.
 
 Códigos de estado comunes:
-- `200 OK`: Este código de estado indica que la solicitud se ha realizado correctamente. Por ejemplo, cuando haces una petición GET para recuperar datos de una API, una respuesta 200 OK significa que los datos se han obtenido correctamente.  
+
+- `200 OK`: Este código de estado indica que la solicitud se ha realizado correctamente. Por ejemplo, cuando haces una petición GET para recuperar datos de una API, una respuesta 200 OK significa que los datos se han obtenido correctamente.
 - `404 No encontrado`: Este código se devuelve cuando el servidor no puede encontrar el recurso solicitado. Por ejemplo, si intentas acceder a un punto final que no existe, recibirás un error 404 Not Found.
 - `500 Error interno del servidor`: Este código indica que algo ha ido mal en el servidor. Es un mensaje de error genérico que puede producirse por diversas causas, como fallos en el código del servidor o problemas con la base de datos.
 
 ### 3.7 Manejo de diferentes códigos de estado
 
-Manejar eficazmente los códigos de estado de la API en tus aplicaciones Python garantiza que tu código se comporte de forma predecible y pueda gestionar los errores con elegancia. 
+Manejar eficazmente los códigos de estado de la API en tus aplicaciones Python garantiza que tu código se comporte de forma predecible y pueda gestionar los errores con elegancia.
 
 - Si la respuesta es `200`, procede a procesar los datos devueltos.
-
-- Cuando te encuentres con un error `404`, comprueba si la URL del punto final es correcta y, si es necesario, implementa una lógica alternativa o informa al usuario de que el recurso no está disponible. 
-
+- Cuando te encuentres con un error `404`, comprueba si la URL del punto final es correcta y, si es necesario, implementa una lógica alternativa o informa al usuario de que el recurso no está disponible.
 - Para los errores `500`, considera reintentar la petición tras un breve retraso o registrar el error para una investigación posterior. Sin embargo, evita reintentos excesivos para no sobrecargar el servidor.
 
 ### 3.8 Ejemplo práctico:
@@ -689,8 +710,11 @@ Las APIs son herramientas fundamentales en la programación moderna. Nos permite
 
 En el contexto de una API, existen tres verbos principales que se utilizan para interactuar con los recursos de la aplicación o servicio. Estos verbos corresponden a los métodos HTTP más comunes y son fundamentales para realizar operaciones de lectura, escritura, actualización y eliminación de datos. Los tres verbos más importantes de una API son:
 
+![Los tres verbos de API](IMG/get.png)
+
 1️⃣ `GET` (Obtener datos)
-El verbo GET se utiliza para obtener datos de un recurso específico sin modificarlo. Este es el método más común, utilizado para recuperar información desde el servidor hacia el cliente. Las solicitudes GET deben ser seguras y no tener efectos secundarios en el servidor.
+
+El verbo `GET` se utiliza para obtener datos de un recurso específico sin modificarlo. Este es el método más común, utilizado para recuperar información desde el servidor hacia el cliente. Las solicitudes GET deben ser seguras y no tener efectos secundarios en el servidor.
 
 - Propósito: Recuperar información de la API.
 - Ejemplo: Obtener la lista de usuarios de una base de datos.
@@ -708,7 +732,8 @@ GET https://api.ejemplo.com/usuarios
 ```
 
 2️⃣	`POST` (Crear datos)
-El verbo POST se utiliza para enviar datos al servidor con el fin de crear un nuevo recurso. A diferencia de GET, que solo lee datos, POST se utiliza para enviar información que puede causar efectos secundarios, como agregar un nuevo registro a una base de datos.
+
+El verbo `POST` se utiliza para enviar datos al servidor con el fin de crear un nuevo recurso. A diferencia de GET, que solo lee datos, POST se utiliza para enviar información que puede causar efectos secundarios, como agregar un nuevo registro a una base de datos.
 
 - Propósito: Enviar datos para crear un nuevo recurso.
 - Ejemplo: Crear un nuevo usuario en la base de datos
@@ -733,10 +758,12 @@ Content-Type: application/json
 ```
 
 3️⃣	`PUT` (Actualizar datos)
-El verbo PUT se utiliza para actualizar un recurso existente. A diferencia de POST, que se usa para crear nuevos recursos, PUT reemplaza completamente un recurso con los datos enviados. Si el recurso no existe, PUT generalmente lo crea.
+
+El verbo `PUT` se utiliza para actualizar un recurso existente. A diferencia de POST, que se usa para crear nuevos recursos, PUT reemplaza completamente un recurso con los datos enviados. Si el recurso no existe, PUT generalmente lo crea.
 
 - Propósito: Actualizar un recurso existente.
 - Ejemplo: Actualizar la información de un usuario existente.
+
 ```http
 PUT https://api.ejemplo.com/usuarios/1
 Content-Type: application/json
@@ -759,7 +786,8 @@ Content-Type: application/json
 Además de los tres verbos principales que mencionamos anteriormente (GET, POST y PUT), añadiría uno más que también me parece fundamental, se trata del verbo DELETE.
 
 4️⃣	`DELETE` (Eliminar datos)
-El verbo DELETE se utiliza para eliminar un recurso específico del servidor. Este verbo borra datos de forma permanente y debe usarse con cuidado, ya que la eliminación no es reversible.
+
+El verbo `DELETE` se utiliza para eliminar un recurso específico del servidor. Este verbo borra datos de forma permanente y debe usarse con cuidado, ya que la eliminación no es reversible.
 
 - Propósito: Eliminar un recurso.
 - Ejemplo: Eliminar un usuario de la base de datos.
@@ -775,7 +803,7 @@ DELETE https://api.ejemplo.com/usuarios/1
 }
 ```
 
-Este verbo es esencial en las APIs RESTful, ya que completa el conjunto de operaciones CRUD (Crear, Leer, Actualizar, Eliminar) que permiten interactuar completamente con los recursos de una aplicación o servicio.
+Este verbo es esencial en las `APIs RESTful`, ya que completa el conjunto de operaciones `CRUD` (Crear, Leer, Actualizar, Eliminar) que permiten interactuar completamente con los recursos de una aplicación o servicio.
 
 ## 5. ¿Es MongoDB una base de datos SQL o NoSQL?
 
@@ -786,7 +814,8 @@ Su nombre proviene de `“humongous”` que podría traducirse como “enorme”
 ![MongoDB](img/mongo.png)
 
 ### 5.1 Introducción
-MongoDB es una base de datos NoSQL de código abierto. Como base de datos no relacional, puede procesar datos estructurados, semiestructurados y no estructurados. Utiliza un modelo de datos no relacional orientado a documentos y un lenguaje de consulta no estructurado.
+
+`MongoDB` es una base de datos `NoSQL` de código abierto. Como base de datos no relacional, puede procesar datos estructurados, semiestructurados y no estructurados. Utiliza un modelo de datos no relacional orientado a documentos y un lenguaje de consulta no estructurado.
 
 MongoDB es muy flexible y permite combinar y almacenar múltiples tipos de datos. También almacena y maneja mayores cantidades de datos que las bases de datos relacionales tradicionales. MongoDB usa un formato de almacenamiento de documentos llamado BSON, que es una forma binaria de JSON (JavaScript Object Notation o notación de objetos de JavaScript) que puede acomodar más tipos de datos.
 
@@ -800,13 +829,14 @@ La estructura de un documento se puede cambiar simplemente añadiendo campos nue
 
 Una función clave de MongoDB es la búsqueda de texto, que permite consultar campos de cadena para texto o palabras específicas. Se puede realizar una búsqueda de texto usando un índice de texto o el operador $text.
 
-Un índice de texto puede ser una cadena o una matriz de elementos de cadena. Para hacer una consulta de búsqueda de texto, la colección debe contener un índice de texto. Una colección solo puede tener un índice de texto y un único índice de texto se puede aplicar a varios campos.
+Un índice de texto puede ser una cadena o una matriz de elementos de cadena. Para hacer una consulta de búsqueda de texto, la colección debe contener un `índice de texto`. Una colección solo puede tener un índice de texto y un único índice de texto se puede aplicar a varios campos.
 
-También se puede efectuar una búsqueda en una colección con un índice de texto usando el operador $text. El operador $text tokeniza cada cadena de búsqueda con espacios en blanco y trata todos los signos de puntuación excepto "–" y "\" como delimitadores. Después de tokenizar la cadena de búsqueda, el operador realiza la operación lógica OR en los tokens.
+También se puede efectuar una búsqueda en una colección con un índice de texto usando el operador` $text`. El operador $text tokeniza cada cadena de búsqueda con espacios en blanco y trata todos los signos de puntuación excepto "–" y "\" como delimitadores. Después de tokenizar la cadena de búsqueda, el operador realiza la operación lógica OR en los tokens.
 
 ### 5.4 La arquitectura de MongoDB y sus componentes
 
 MongoDB tiene tres principios o diseños básicos:
+
 - El modelo de datos de documentos está pensada para `trabajar de la mejor manera los datos`.
 - Tiene un diseño de sistemas distribuidos, donde nos va a permitir `colocar los datos de forma inteligente`.
 - Puede `correr en cualquier ambiente`, permitiendo eliminar el bloqueo de los proveedores.
@@ -816,7 +846,7 @@ MongoDB tiene tres principios o diseños básicos:
 
 ### 5.5 Tres ejemplos de consultas de MongoDB
 
-MongoDB utiliza MongoDB Query Language (MQL) para recuperar datos de la base de datos. Es fácil de usar y funciona de manera similar a SQL con operaciones CRUD para crear, leer, actualizar y eliminar documentos. Los nombres de las funciones siguen la sintaxis:
+MongoDB utiliza M`ongoDB Query Language` (`MQL`) para recuperar datos de la base de datos. Es fácil de usar y funciona de manera similar a `SQL` con operaciones `CRUD` para crear, leer, actualizar y eliminar documentos. Los nombres de las funciones siguen la sintaxis:
 
 ```javascript
 <database>.<collection_name>. <operation>.
@@ -824,7 +854,7 @@ MongoDB utiliza MongoDB Query Language (MQL) para recuperar datos de la base de 
 
 A continuación se muestran tres ejemplos prácticos:
 
-**1️⃣ INSERT: Crear o insertar un nuevo documento en una colección**
+1️⃣ **`INSERT`: Crear o insertar un nuevo documento en una colección**
 
 Si la colección no existe, se creará una nueva colección.
 
@@ -850,7 +880,7 @@ db.customer.insertOne(
 )
 ```
 
-**2️⃣ FIND: Consultar una colección de documentos**
+2️⃣ **`FIND`: Consultar una colección de documentos**
 
 Se pueden aplicar criterios y filtros de consulta para encontrar documentos específicos.
 ```javascript
@@ -862,7 +892,7 @@ El siguiente código encuentra todos los documentos en la colección del cliente
 db.collection.find()
 ```
 
-**3️⃣ UPDATE: Modificar documentos existentes en una colección**
+3️⃣ **`UPDATE`: Modificar documentos existentes en una colección**
 
 ```javascript
 // Actualizar un solo documento
@@ -879,6 +909,7 @@ db.collection.updateMany(
 ```
 
 Así es como actualizaría un documento en la colección de clientes:
+
 ```javascript
 db.customer.updateOne(
     { firstname: "Marta" },
@@ -904,22 +935,25 @@ MongoDB almacena los datos en RAM para poder acceder más rápidamente a ellos y
 ### 5.7 Principales diferencias SQL y NoSQL
 
 1️⃣ Estructura de datos
+
 - SQL usa tablas con filas y columnas.
 - NoSQL usa documentos, clave-valor, grafos o columnas anchas.
 
 2️⃣	 Lenguaje de consulta
+
 - SQL usa Structured Query Language (SQL).
 - NoSQL varía según la base de datos (ej. MongoDB usa MQL).
 
-Ejemplo:
-SQL:
+🔹 Ejemplo:
+
+`SQL`:
 
 ```sql
 SELECT * FROM usuarios WHERE nombre = 'Juan';
 
 ```
 
-NoSQL (MongoDB):
+`NoSQL` (MongoDB):
 
 ```javascript
 db.usuarios.find({ nombre: "Juan" });
@@ -927,28 +961,34 @@ db.usuarios.find({ nombre: "Juan" });
 ```
 
 3️⃣	 Esquema de datos
+
 - SQL tiene un esquema rígido (estructura fija).
 - NoSQL tiene un esquema flexible (puede variar entre documentos).
 
-4️⃣	. Escalabilidad
+4️⃣  Escalabilidad
+
 - SQL escala verticalmente (mejorando el hardware).
 - NoSQL escala horizontalmente (distribuyendo datos entre servidores).
 
 5️⃣	 Integridad y transacciones
+
 - SQL sigue ACID (mayor seguridad y consistencia).
 - NoSQL sigue BASE (más rápido, pero con menor consistencia inmediata).
 
-#### 5.7.1 Cuándo utilizar uno u otro
+❓ ¿Cuándo utilizar uno u otro?
+
 Cuando se trata de elegir entre SQL y NoSQL, la decisión depende en gran medida del tipo de datos que se manejarán y de los requisitos del sistema:
 
-- **SQL** es ideal cuando se trabaja con datos altamente estructurados y bien definidos, como registros financieros, bases de datos de clientes con relaciones complejas o sistemas que requieren transacciones seguras y consistentes.
+- `SQL` es ideal cuando se trabaja con datos altamente estructurados y bien definidos, como registros financieros, bases de datos de clientes con relaciones complejas o sistemas que requieren transacciones seguras y consistentes.
 
-- **NoSQL** es preferible cuando se manejan datos no estructurados o semiestructurados, como documentos JSON, big data, contenido multimedia o aplicaciones en la nube que requieren escalabilidad horizontal.
+- `NoSQL` es preferible cuando se manejan datos no estructurados o semiestructurados, como documentos JSON, big data, contenido multimedia o aplicaciones en la nube que requieren escalabilidad horizontal.
 
 
 ## 6. ¿Qué es Postman y para qué sirve?
 
 En el mundo del desarrollo web y de aplicaciones móviles, la interacción con APIs (Interfaz de Programación de Aplicaciones) es una parte fundamental del proceso. Las APIs permiten la comunicación entre diferentes servicios y aplicaciones, lo que facilita la integración de funcionalidades complejas en proyectos. Sin embargo, probar y gestionar estas interacciones puede ser un desafío, especialmente cuando se manejan múltiples entornos y solicitudes. Aquí es donde entra en juego Postman, una herramienta que ha revolucionado la forma en que los desarrolladores trabajan con APIs.
+
+![Postman](img/postman.jpeg)
 
 ### 6.1 Introducción
 
@@ -989,32 +1029,34 @@ Cada vez son más los desarrolladores y programadores que apuestan por un entorn
 
 ### 6.4 Métodos y primeros pasos con Postman
 
-Una vez definido de qué trata esta herramienta y qué beneficios aporta al desarrollador, conoce un poco sobre algunos conceptos o métodos que se trabajan en dicha herramienta y que son fundamentales para entender de qué va. 
+Una vez definido de qué trata esta herramienta y qué beneficios aporta al desarrollador, conoce un poco sobre algunos conceptos o métodos que se trabajan en dicha herramienta y que son fundamentales para entender de qué va.
 
 1️⃣	 `Consultar recursos (URI)`
-Cuando realizas una consulta de información muy específica de una API, se le conoce como URI. Esto te sirve cuando necesites una información muy concentrada dentro de una API, como puede ser la información de un estudiante dentro una base de datos de un colegio, por poner un ejemplo sencillo. 
 
-Así puedes, puedes consultar los recursos que necesites de forma individual, o bien, solicitar una lista de todos los recursos necesarios. 
+Cuando realizas una consulta de información muy específica de una API, se le conoce como URI. Esto te sirve cuando necesites una información muy concentrada dentro de una API, como puede ser la información de un estudiante dentro una base de datos de un colegio, por poner un ejemplo sencillo.
+
+Así puedes, puedes consultar los recursos que necesites de forma individual, o bien, solicitar una lista de todos los recursos necesarios.
 
 2️⃣	`Códigos de estados`
-Los códigos de estados te informan sobre la situación o estado de una petición de recursos. Es decir, cuando realizas una consulta de información en una API, ésta te arrojará una respuesta a través de un código, que determina el estado de dicha solicitud. 
 
-- Códigos 200:
+Los códigos de estados te informan sobre la situación o estado de una petición de recursos. Es decir, cuando realizas una consulta de información en una API, ésta te arrojará una respuesta a través de un código, que determina el estado de dicha solicitud.
+
+- Códigos `200`:
   - Todos los códigos representados con el número 200, quieren decir que la operación solicitada ha sido concretada con éxito.
 
   - Ya sea que hayas solicitado una información o incluso, que hayas creado un nuevo recurso y demás funciones. Siempre y cuando se encuentre en esta terminación 200, significa que se desarrolló con éxito.
 
-- Códigos 300:
+- Códigos `300`:
   - Estos códigos de estados determinan cuando se ha realizado una redirección de petición. Estas redirecciones pueden ser permanentes o pueden ser temporales.
 
-- Códigos 400:
+- Códigos `400`:
   - Estos códigos te van a indicar cuando una solicitud que hayas realizado no tiene validez. Los casos que provocan esta respuesta son cuando solicitas una información que bien no existe o no tienes los permisos para acceder a dicha información.
 
-- Códigos 500:
+- Códigos `500`:
   - Son códigos de estados que establecen un error con el servidor. Estos errores podrás identificarlos según el tipo de código que se te presente.
 
 3️⃣	`Métodos HTTP`
-Son los métodos que directamente te permiten una interacción con la API en cuestión. Y podrás identificarlos a través de la siguiente terminología: 
+Son los métodos que directamente te permiten una interacción con la API en cuestión. Y podrás identificarlos a través de la siguiente terminología:
 
 - `Get` - Es lo que te permite solicitar una información dentro de la herramienta Postman.
 
@@ -1025,11 +1067,12 @@ Son los métodos que directamente te permiten una interacción con la API en cue
 - `Delete` - Se trata de la eliminación de un recurso específico.
 
 4️⃣ Formatos
-Una vez que comiences a desarrollar API 's, tarde o temprano te toparás con tres conceptos que son claves, como lo son: Json, XML o Texto plano. Estos son los formatos en los que una API puede representar sus recursos, y algunos formatos son más comunes que otros. 
 
-Por ejemplo, el formato estándar actual y el más utilizado, es el formato Json. Sin embargo, todavía existen aplicaciones o empresas que hacen uso de XML e incluso Texto Plano para la lectura de sus API 's. 
+Una vez que comiences a desarrollar API 's, tarde o temprano te toparás con tres conceptos que son claves, como lo son: `Json`, `XML` o `Texto plano`. Estos son los formatos en los que una API puede representar sus recursos, y algunos formatos son más comunes que otros.
 
-En conclusión, manejar estos conceptos es fundamental en el mundo del desarrollo de software. 
+Por ejemplo, el formato estándar actual y el más utilizado, es el formato Json. Sin embargo, todavía existen aplicaciones o empresas que hacen uso de XML e incluso Texto Plano para la lectura de sus API 's.
+
+En conclusión, manejar estos conceptos es fundamental en el mundo del desarrollo de software.
 
 ### 6.5 ¿Por qué usar Postman?
 
@@ -1038,6 +1081,10 @@ Postman es una herramienta todo-en-uno que simplifica y optimiza el trabajo con 
 En resumen, Postman se ha consolidado como una herramienta esencial para los desarrolladores que trabajan con APIs, al proporcionar un entorno de pruebas eficiente y amigable, y permitir la automatización de tareas repetitivas.
 
 ## 7. ¿Qué es el polimorfismo?
+
+El `polimorfismo` en Python es un principio de la programación orientada a objetos que permite que un mismo método, función o interfaz pueda ser utilizado por diferentes tipos de objetos, respondiendo de manera distinta según la clase a la que pertenezcan. Esto facilita la reutilización del código y la flexibilidad en el diseño de programas, ya que permite tratar diferentes tipos de datos de manera uniforme sin necesidad de conocer su tipo específico.
+
+![Polimorfismo en Python](img/polimorfismo.jpg)
 
 ### 7.1 Introducción a la herencia y el polimorfismo en Python
 
@@ -1053,11 +1100,11 @@ En Python, también podemos acceder a los métodos heredados de la clase padre u
 
 ### 7.2 Tipos de polimorfismo en Python:
 
-1️⃣ Polimorfismo con Métodos en Diferentes Clases
+1️⃣ `Polimorfismo con Métodos en Diferentes Clases`
 
 Este tipo de polimorfismo ocurre cuando diferentes clases tienen métodos con el mismo nombre, pero con implementaciones diferentes. Así, se pueden tratar de manera uniforme objetos de distintas clases sin preocuparse de su tipo.
 
-Ejemplo: Métodos sonido() en clases diferentes
+🔹 Ejemplo: Métodos sonido() en clases diferentes
 
 ```python
 class Perro:
@@ -1081,17 +1128,18 @@ print(hacer_sonido(perro))  # Guau
 print(hacer_sonido(gato))   # Miau
 ```
 📌 Explicación del código:
+
 - Se definen dos clases (`Perro` y `Gato`) que tienen el mismo método `sonido()`, pero con distintas implementaciones.
 - La función `hacer_sonido(animal)` recibe un objeto cualquiera y llama al método `sonido()`, sin importar si es un Perro o un Gato.
 - Al llamar `hacer_sonido(perro)`, el programa usa la versión de `sonido()` de la clase `Perro`, y lo mismo ocurre con `hacer_sonido(gato)`.
 
 ✅ Ventaja: Se pueden tratar diferentes objetos con la misma función sin condicionar su tipo.
 
-2️⃣ Polimorfismo en Herencia (Sobreescritura de Métodos - Override)
+2️⃣ `Polimorfismo en Herencia` (Sobreescritura de Métodos - Override)
 
 Este tipo ocurre cuando una clase hija redefine un método heredado de la clase padre para modificar su comportamiento.
 
-Ejemplo: Sobrescribir el método sonido()
+🔹 Ejemplo: Sobrescribir el método sonido()
 
 ```python
 class Animal:
@@ -1118,18 +1166,18 @@ print(gato.sonido())    # Miau
 
 ```
 📌 Explicación del código:
+
 - Se define una clase base `Animal` con el método `sonido()`.
 - Las clases `Perro` y `Gato` heredan de `Animal` pero sobrescriben `sonido()` con su propia implementación.
 - Cuando se llama `sonido()` en una `instancia` de `Perro` o `Gato`, se ejecuta la versión redefinida en la subclase, no la de la clase Animal.
 
 ✅ Ventaja: Permite especializar el comportamiento de las clases hijas sin modificar la estructura de la clase padre.
 
+3️⃣ `Polimorfismo con Funciones y Operadores` (`Duck Typing`)
 
-3️⃣ Polimorfismo con Funciones y Operadores (Duck Typing)
+En Python, no se verifica explícitamente el tipo de un objeto, sino si este tiene el método requerido. Si un objeto tiene un método con el mismo nombre que otro objeto, Python lo ejecuta sin importar su tipo. A esto se le conoce como `Duck Typing`.
 
-En Python, no se verifica explícitamente el tipo de un objeto, sino si este tiene el método requerido. Si un objeto tiene un método con el mismo nombre que otro objeto, Python lo ejecuta sin importar su tipo. A esto se le conoce como `Duck Typing` (si camina como un pato y hace cuac, entonces es un pato).
-
-Ejemplo: Diferentes clases con el método nadar()
+🔹 Ejemplo: Diferentes clases con el método nadar()
 
 ```python
 class Pato:
@@ -1154,17 +1202,18 @@ print(actividad_acuatica(persona))  # La persona nada en la piscina
 
 ```
 📌 Explicación del código:
+
 - `Pato` y `Persona` tienen el método `nadar()`, pero no comparten relación de herencia.
 - La función `actividad_acuatica(ser)` llama al método `nadar()` sin verificar de qué tipo es el objeto.
 -Python ejecuta `nadar()` correctamente tanto en `Pato` como en `Persona`, siempre que tengan el método.
 
 ✅ Ventaja: Se puede escribir código flexible que funciona con cualquier objeto que implemente la interfaz esperada.
 
-4️⃣ Polimorfismo con Operadores (Métodos Especiales o Dunder Methods)
+4️⃣ `Polimorfismo con Operadores` (Métodos Especiales o Dunder Methods)
 
 Python permite sobrecargar operadores para que puedan ser usados con objetos personalizados. Esto se logra mediante los métodos especiales, también llamados `Dunder Methods`, por sus dobles guiones bajos __ al inicio y al final.
 
-Ejemplo: Sobrecarga del operador +
+🔹 Ejemplo: Sobrecarga del operador +
 
 ```python
 class Vector:
@@ -1186,6 +1235,7 @@ print(resultado)  # Vector(3, 8)
 ```
 
 📌 Explicación del código:
+
 - Se define la clase `Vector` con dos atributos `x` e `y`.
 - Se sobrescribe el método especial `__add__()`, que define cómo actúa el operador `+` cuando se usa con objetos de la clase `Vector`.
 - Ahora, al escribir `v1 + v2`, Python llama automáticamente a `__add__()` y devuelve un nuevo objeto `Vector` con la suma de los valores.
@@ -1195,18 +1245,21 @@ print(resultado)  # Vector(3, 8)
 
 ## 8. ¿Qué es un método dunder?
 
-Cualquier objeto creado en Python al invocar una clase, sea la que sea, tiene incorporados unos métodos especiales denominados métodos dunder o mágicos. Se llaman así porque el nombre de todos ellos comienza y termina con dos caracteres underline (__). Ya hemos visto uno de ellos, el más importante de todos: __init__(), pues se llama cada vez que una clase es invocada.
+Cualquier objeto creado en Python al invocar una clase, sea la que sea, tiene incorporados unos métodos especiales denominados métodos `dunder` o mágicos. Se llaman así porque el nombre de todos ellos comienza y termina con dos caracteres underline (`__`). Ya hemos visto uno de ellos, el más importante de todos: `__init__()`, pues se llama cada vez que una clase es invocada.
 
 Estos métodos no se llaman directamente, sino que son invocados automáticamente por el intérprete de Python en diversas situaciones (como operaciones aritméticas, manipulación de secuencias y gestión del contexto).
 
+![Método Dunder](img/dunder.jpg)
+
 ### 8.1 Principales Métodos Dunder
 
-A continuación, veremos los métodos Dunder más importantes, su propósito y ejemplos de uso.
+A continuación, veremos los `métodos Dunder` más importantes, su propósito y ejemplos de uso.
 
-1️⃣ `__init__`  → Constructor de Clases
+1️⃣ `__init__`  → Constructor de Clases.
+
 Este método se ejecuta automáticamente cuando se crea una instancia de una clase. Se usa para inicializar los atributos del objeto.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class Persona:
@@ -1221,13 +1274,15 @@ print(p.edad)    # 30
 
 ```
 📌 Explicación del código:
+
 - `__init__` recibe `nombre` y `edad` y los asigna al objeto.
 - Se ejecuta automáticamente cuando se crea una nueva instancia.
 
-2️⃣ `__str__`  → Representación en String
+2️⃣ `__str__`  → Representación en String.
+
 Este método define cómo se muestra el objeto cuando se usa print().
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class Persona:
@@ -1243,13 +1298,15 @@ print(p)  # Persona(nombre=Ana, edad=25)
 
 ```
 📌 Explicación del código:
+
 - Sin `__str__`, `print(p)` mostraría algo como `<__main__.Persona object at 0x7f9c1b>` (una referencia en memoria).
 - Con `__str__`, se obtiene una salida más legible.
 
-3️⃣ __repr__  → Representación para Depuración
-Este método es similar a __str__, pero se usa para representar el objeto de manera precisa (ideal para depuración). Se usa cuando llamamos repr(objeto).
+3️⃣ `__repr__`  → Representación para Depuración.
 
-Ejemplo:
+Este método es similar a `__str__`, pero se usa para representar el objeto de manera precisa (ideal para depuración). Se usa cuando llamamos repr(objeto).
+
+🔹 Ejemplo:
 
 ```python
 class Persona:
@@ -1264,13 +1321,15 @@ p = Persona("Luis", 40)
 print(repr(p))  # Persona('Luis', 40)
 ```
 📌 Diferencias `__str__` vs `__repr__`:
+
 - __str__	 → Para mostrar una representación amigable del objeto (con print()).
 - __repr__	 → Para depuración, debe mostrar una representación exacta (con repr()).
 
-4️⃣ __len__  → Longitud del Objeto
+4️⃣ `__len__`  → Longitud del Objeto.
+
 Este método permite que len(objeto) funcione en clases personalizadas.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class Grupo:
@@ -1284,12 +1343,14 @@ equipo = Grupo(["Juan", "Ana", "Luis"])
 print(len(equipo))  # 3
 ```
 📌 Explicación:
+
 - `len(equipo)` internamente llama a `__len__`, devolviendo el número de miembros.
 
-5️⃣ __getitem__ – Acceder a Elementos con []
+5️⃣ `__getitem__` → Acceder a Elementos con []
+
 Permite que un objeto personalizado se comporte como una lista o diccionario.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class ListaNumeros:
@@ -1304,12 +1365,14 @@ print(lista[1])  # 20
 
 ```
 📌 Explicación:
+
 - `lista[1]` llama internamente a `__getitem__`, devolviendo 20.
 
-6️⃣ __setitem__ – Modificar Elementos con []
+6️⃣ `__setitem__` → Modificar Elementos con []
+
 Permite modificar elementos de un objeto personalizado.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class ListaNumeros:
@@ -1327,12 +1390,14 @@ lista[1] = 50
 print(lista.numeros)  # [10, 50, 30]
 ```
 📌 Explicación:
+
 - `lista[1] = 50` llama a `__setitem__`, modificando el valor en la lista.
 
-7️⃣ __add__ – Sobrecarga del Operador +
+7️⃣ `__add__`  → Sobrecarga del Operador +
+
 Define cómo funciona + con objetos personalizados.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class Vector:
@@ -1352,12 +1417,14 @@ v2 = Vector(1, 5)
 print(v1 + v2)  # Vector(3, 8)
 ```
 📌 Explicación:
+
 - `v1 + v2` llama a `__add__`, devolviendo un nuevo Vector.
 
-8️⃣ __call__ – Hacer que un Objeto se Pueda Llamar como Función
+8️⃣ `__call__`  → Hacer que un Objeto se Pueda Llamar como Función
+
 Este método permite tratar un objeto como si fuera una función.
 
-Ejemplo:
+🔹 Ejemplo:
 
 ```python
 class Multiplicador:
@@ -1372,12 +1439,14 @@ print(doblar(5))  # 10
 
 ```
 📌 Explicación:
+
 - `doblar(5)` llama a `__call__`, devolviendo 10.
 
-9️⃣ __eq__, __lt__, __gt__ – Comparaciones
-Estos métodos permiten definir cómo se comparan objetos con ==, <, >.
+9️⃣ `__eq__`, `__lt__`, `__gt__`  → Comparaciones
 
-Ejemplo:
+Estos métodos permiten definir cómo se comparan objetos con `==`, `<`, `>`.
+
+🔹 Ejemplo:
 
 ```python
 class Persona:
@@ -1398,23 +1467,26 @@ print(p1 == p2)  # False (porque 30 != 25)
 print(p1 < p2)   # False (porque 30 no es menor que 25)
 ```
 📌 Explicación:
-p1 == p2 llama a __eq__, comparando edades.
-p1 < p2 llama a __lt__.
+
+- `p1 == p2` llama a `__eq__`, comparando edades.
+- `p1 < p2` llama a `__lt__`.
 
  ❗ Conclusión
 Los métodos `Dunder` permiten personalizar cómo se comportan los objetos en Python. Con ellos, se pueden crear clases que actúan como listas, diccionarios, números y más. Son clave para escribir código más elegante y reutilizable.
 
 ## 9. Decorador de Python
 
-Un decorador en Python es una función que modifica el comportamiento de otra función sin cambiar su código. Se utilizan para agregar funcionalidades a funciones o métodos sin alterar su implementación original.
+Un `decorador` en Python es una función que modifica el comportamiento de otra función sin cambiar su código. Se utilizan para agregar funcionalidades a funciones o métodos sin alterar su implementación original.
 
 Se basan en el concepto de funciones de orden superior, lo que significa que pueden recibir funciones como argumentos y devolver nuevas funciones.
+
+![Decorador de Python](img/property-image.png)
 
 ### 9.1 Cómo Funciona un Decorador
 
 Un decorador envuelve una función con otra función, permitiendo ejecutar código antes y/o después de la función original.
 
-Ejemplo básico de un decorador
+🔹 Ejemplo básico de un decorador
 
 ```python
 def decorador(func):
@@ -1429,13 +1501,13 @@ def mi_funcion():
     print("¡Hola desde la función original!")
 
 mi_funcion()
-```
 
-Salida:
-```nginx
+"""
+Output:
 Antes de ejecutar la función...
 ¡Hola desde la función original!
 Después de ejecutar la función...
+"""
 ```
 
 📌 Explicación:
@@ -1445,9 +1517,10 @@ Después de ejecutar la función...
 - Cuando se llama `mi_funcion()`, en realidad se ejecuta `funcion_modificada()`.
 
 ### 9.2 Decoradores con Argumentos
+
 Si la función decorada acepta argumentos, el decorador debe manejarlos con *args y **kwargs.
 
-Ejemplo: Decorador que acepta parámetros
+🔹 Ejemplo: Decorador que acepta parámetros
 
 ```python
 def decorador(func):
@@ -1472,14 +1545,16 @@ Resultado: 8
 ```
 
 📌 Explicación:
-- f`uncion_modificada(*args, **kwargs)` permite que la función decorada reciba cualquier cantidad de argumentos.
+
+- `funcion_modificada(*args, **kwargs)` permite que la función decorada reciba cualquier cantidad de argumentos.
 - Se imprimen los argumentos antes de llamar a la función original.
 - Se captura y muestra el resultado antes de devolverlo.
 
 ### 9.3 Decoradores Anidados
+
 Es posible aplicar varios decoradores a una misma función.
 
-Ejemplo: Múltiples decoradores
+🔹 Ejemplo: Múltiples decoradores
 
 ```python
 def decorador_1(func):
@@ -1500,22 +1575,27 @@ def saludar():
     print("Hola, mundo!")
 
 saludar()
-```
-Salida:
-```nginx
+
+
+"""
+Output:
 Ejecutando decorador 1...
 Ejecutando decorador 2...
 Hola, mundo!
+"""
 ```
+
 📌 Explicación:
+
 - `@decorador_2` se aplica primero a `saludar()`, envolviendo su ejecución.
 - `@decorador_1` envuelve el resultado de `decorador_2`.
 - Al llamar `saludar()`, se ejecutan los decoradores en orden.
 
 ### 9.4 Decoradores con Parámetros
+
 Si queremos que el decorador en sí mismo reciba argumentos, necesitamos una función adicional.
 
-Ejemplo: Decorador con parámetros
+🔹 Ejemplo: Decorador con parámetros
 
 ```python
 def repetir(n):
@@ -1533,7 +1613,7 @@ def hola():
 hola()
 ```
 
-Salida
+Salida:
 
 ```nginx
 ¡Hola!
@@ -1541,6 +1621,7 @@ Salida
 ¡Hola!
 ```
 📌 Explicación:
+
 - `repetir(n)` crea un decorador que ejecuta la función `n` veces.
 - `@repetir(3)` aplica el decorador a `hola()`, repitiéndola tres veces.
 
@@ -1548,7 +1629,7 @@ Salida
 
 Al usar decoradores, la función decorada pierde su identidad (`__name__` y `__doc__`). Para conservarla, usamos `functools.wraps`.
 
-Ejemplo: Conservar metadatos de la función
+🔹 Ejemplo: Conservar metadatos de la función
 
 ```python
 import functools
@@ -1569,13 +1650,15 @@ print(funcion.__name__)  # funcion
 print(funcion.__doc__)   # Esta es una función de prueba
 ```
 📌 Explicación:
-functools.wraps(func) copia los metadatos de func a wrapper, preservando __name__ y __doc__.
+
+- `functools.wraps(func)` copia los metadatos de func a wrapper, preservando `__name__` y `__doc__`.
 
 ### 9.6 Aplicaciones Comunes de Decoradores
 
 Los decoradores se usan en muchos casos, como:
 
-1️⃣ Medir el Tiempo de Ejecución
+1️⃣ `Medir el Tiempo de Ejecución`
+
 ```python
 import time
 
@@ -1596,7 +1679,7 @@ def tarea_pesada():
 tarea_pesada()
 ```
 
-2️⃣ Control de Acceso (Autenticación)
+2️⃣ `Control de Acceso` (Autenticación)
 
 ```python
 def requiere_autenticacion(func):
@@ -1614,7 +1697,8 @@ def ver_datos():
 
 ver_datos()
 ```
-3️⃣ Contar Llamadas a una Función
+
+3️⃣ `Contar Llamadas a una Función`
 
 ```python
 def contador_llamadas(func):
@@ -1635,7 +1719,8 @@ def saludar():
 saludar()
 saludar()
 ```
-Salida
+Salida:
+
 ```css
 Llamada número 1 a saludar
 Hola!
@@ -1643,8 +1728,14 @@ Llamada número 2 a saludar
 Hola!
 ```
 
- ❗ Conclusión
-Los decoradores son una herramienta poderosa en Python que permiten modificar el comportamiento de funciones sin alterar su código original. Se pueden usar para: 
+ ❗ Conclusión:
+
+Los decoradores son una herramienta poderosa en Python que permiten modificar el comportamiento de funciones sin alterar su código original.
+Se pueden usar para:
+
 ✅ Agregar funcionalidad extra sin modificar el código fuente
+
 ✅ Optimizar código eliminando repeticiones
+
 ✅ Medir rendimiento, autenticación, logging y más
+
