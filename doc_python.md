@@ -1,7 +1,6 @@
 # Guía de Conceptos Fundamentales en Python
 
-![Portada de la documentación](img/python_image.png)
-
+![Portada de la documentación](img/mongo_estructura.png)
 
 ## Índice
 
