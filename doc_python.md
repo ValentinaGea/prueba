@@ -1,4 +1,68 @@
-# Índice
+# Guía de Conceptos Fundamentales en Python
+
+![Portada de la documentación](img/python_image.png)
+
+
+## Índice
+
+## 1. [Las clases en Python](#1-las-clases-en-python)  
+### 1.1 [Crear una clase en Python](#11-crear-una-clase-en-python)  
+### 1.2 [Instanciar un objeto](#12-instanciar-un-objeto)  
+### 1.3 [Añadir atributos a una clase](#13-añadir-atributos-a-una-clase)  
+### 1.4 [Definir métodos en una clase](#14-definir-métodos-en-una-clase)  
+#### 1.4.1 [Métodos de Instancia](#141-métodos-de-instancia)  
+#### 1.4.2 [Métodos de Clase (@classmethod)](#142-métodos-de-clase-classmethod)  
+#### 1.4.3 [Métodos Estáticos (@staticmethod)](#143-métodos-estáticos-staticmethod)  
+### 1.5 [Cómo pasar argumentos a los métodos](#15-cómo-pasar-argumentos-a-los-métodos)  
+### 1.6 [Ventajas y desventajas del uso de las clases en Python](#16-ventajas-y-desventajas-del-uso-de-las-clases-en-python)  
+
+## 2. [¿Qué método se ejecuta automáticamente cuando se crea una instancia de una clase?](#2-qué-método-se-ejecuta-automáticamente-cuando-se-crea-una-instancia-de-una-clase)  
+### 2.1 [Método constructor](#21-método-constructor)  
+
+## 3. [Introducción a las APIs en Python](#3-introducción-a-las-apis-en-python)  
+### 3.1 [¿Qué es una API?](#31-qué-es-una-api)  
+### 3.2 [¿Por qué son importantes las APIs?](#32-por-qué-son-importantes-las-apis)  
+### 3.3 [¿Qué es un endpoint en una API?](#33-qué-es-un-endpoint-en-una-api)  
+### 3.4 [Tipos de APIs](#34-tipos-de-apis)  
+### 3.5 [APIs web y REST](#35-apis-web-y-rest)  
+### 3.6 [Comprender los códigos de estado de la API de Python](#36-comprender-los-códigos-de-estado-de-la-api-de-python)  
+### 3.7 [Manejo de diferentes códigos de estado](#37-manejo-de-diferentes-códigos-de-estado)  
+### 3.8 [Ejemplo práctico](#38-ejemplo-práctico)  
+
+## 4. [¿Cuáles son los tres verbos de API?](#4-cuáles-son-los-tres-verbos-de-api)  
+
+## 5. [¿Es MongoDB una base de datos SQL o NoSQL?](#5-es-mongodb-una-base-de-datos-sql-o-nosql)  
+### 5.1 [Introducción](#51-introducción)  
+### 5.2 [¿Cómo funciona MongoDB?](#52-cómo-funciona-mongodb)  
+### 5.3 [¿Cómo funciona la búsqueda de texto de MongoDB?](#53-cómo-funciona-la-búsqueda-de-texto-de-mongodb)  
+### 5.4 [La arquitectura de MongoDB y sus componentes](#54-la-arquitectura-de-mongodb-y-sus-componentes)  
+### 5.5 [Tres ejemplos de consultas de MongoDB](#55-tres-ejemplos-de-consultas-de-mongodb)  
+### 5.6 [Ventajas de usar MongoDB](#56-ventajas-de-usar-mongodb)  
+### 5.7 [Principales diferencias SQL y NoSQL](#57-principales-diferencias-sql-y-nosql)  
+#### 5.7.1 [Cuándo utilizar uno u otro](#571-cuándo-utilizar-uno-u-otro)  
+
+## 6. [¿Qué es Postman y para qué sirve?](#6-qué-es-postman-y-para-qué-sirve)  
+### 6.1 [Introducción](#61-introducción)  
+### 6.2 [Cómo funciona Postman](#62-cómo-funciona-postman)  
+### 6.3 [Ventajas respecto a otras herramientas](#63-ventajas-respecto-a-otras-herramientas)  
+### 6.4 [Métodos y primeros pasos con Postman](#64-métodos-y-primeros-pasos-con-postman)  
+### 6.5 [¿Por qué usar Postman?](#65-por-qué-usar-postman)  
+
+## 7. [¿Qué es el polimorfismo?](#7-qué-es-el-polimorfismo)  
+### 7.1 [Introducción a la herencia y el polimorfismo en Python](#71-introducción-a-la-herencia-y-el-polimorfismo-en-python)  
+### 7.2 [Tipos de polimorfismo en Python](#72-tipos-de-polimorfismo-en-python)  
+
+## 8. [¿Qué es un método dunder?](#8-qué-es-un-método-dunder)  
+### 8.1 [Principales Métodos Dunder](#81-principales-métodos-dunder)  
+
+## 9. [Decorador de Python](#9-decorador-de-python)  
+### 9.1 [Cómo Funciona un Decorador](#91-cómo-funciona-un-decorador)  
+### 9.2 [Decoradores con Argumentos](#92-decoradores-con-argumentos)  
+### 9.3 [Decoradores Anidados](#93-decoradores-anidados)  
+### 9.4 [Decoradores con Parámetros](#94-decoradores-con-parámetros)  
+### 9.5 [Uso de functools.wraps](#95-uso-de-functoolswraps)  
+### 9.6 [Aplicaciones Comunes de Decoradores](#96-aplicaciones-comunes-de-decoradores)  
+
 
 ## 1. Las clases en Python
 
@@ -222,7 +286,7 @@ Tipos de Métodos en una Clase
 2️⃣ Métodos de Clase → Usan @classmethod y cls para modificar atributos de clase.
 3️⃣ Métodos Estáticos → Usan @staticmethod y no dependen de la instancia ni de la clase.
 
-####  1.4.1  **Métodos de Instancia**
+####  1.4.1 Métodos de Instancia
 Son los más comunes y operan sobre un objeto específico.
 
 🔹 Ejemplo:
@@ -407,14 +471,14 @@ print(Conversor.convertir_celsius_a_fahrenheit(25))  # Salida: 77.0
 
 ### 1.6 Ventajas y desventajas del uso de las clases en Python
 
-#### ✅ 1.6.1 Ventajas:
+✅ Ventajas:
 - Reutilización de Código: Permiten la creación de objetos a partir de una plantilla, evitando la duplicación de código.
 - Encapsulamiento: Facilitan la organización y protección de datos mediante atributos privados y públicos.
 - Modularidad: Facilitan el mantenimiento y la escalabilidad de programas grandes.
 - Herencia: Se pueden crear nuevas clases basadas en clases existentes, promoviendo la reutilización y especialización del código.
 - Polimorfismo: Permiten definir métodos con el mismo nombre en diferentes clases para adaptarse a distintos tipos de datos.
 
-#### ❌ 1.6.2 Desventajas:
+❌ Desventajas:
 - Mayor Complejidad: Para proyectos muy simples, el uso de clases puede añadir una capa innecesaria de complejidad.
 - Uso de Memoria: Cada instancia de una clase consume memoria, lo que puede ser menos eficiente en algunos casos que una estructura funcional.
 - Curva de Aprendizaje: Para principiantes, entender conceptos como herencia, encapsulamiento y polimorfismo puede ser desafiante.
@@ -829,7 +893,7 @@ db.customer.updateOne(
 )
 ```
 
-### 5.3 Ventajas de usar mongoDB:
+### 5.6 Ventajas de usar mongoDB:
 
 1️⃣ `Flexibilidad`
 MongoDB tiene una arquitectura de esquema dinámico que funciona con almacenamiento y datos no estructurados. Como los datos se almacenan en documentos flexibles similares a JSON, el esquema de la base de datos no tiene que estar predefinido y los esquemas se pueden modificar dinámicamente sin causar tiempo de inactividad.
@@ -842,9 +906,7 @@ MongoDB ofrece escalabilidad horizontal a través de un proceso llamado fragment
 3️⃣ `Mayor Rendimiento`
 MongoDB almacena los datos en RAM para poder acceder más rápidamente a ellos y conseguir un mayor rendimiento al ejecutar consultas. Recopila los datos directamente de la RAM en lugar del disco duro, lo que hace que la lectura y escritura de datos sea más rápida. La estructura de datos no relacional de MongoDB también implica que necesita menos potencia de procesamiento para buscar y recuperar datos que una base de datos relacional.
 
-### 5.4 SQL vs NoSQL: ¿cuáles son las diferencias y cuándo utilizar uno u otro?
-
-#### **5.4.1 Principales diferencias SQL y NoSQL**
+### 5.7 Principales diferencias SQL y NoSQL
 
 1️⃣ Estructura de datos
 - SQL usa tablas con filas y columnas.
@@ -881,7 +943,7 @@ db.usuarios.find({ nombre: "Juan" });
 - SQL sigue ACID (mayor seguridad y consistencia).
 - NoSQL sigue BASE (más rápido, pero con menor consistencia inmediata).
 
-#### 5.4.2 Cuándo utilizar uno u otro
+#### 5.7.1 Cuándo utilizar uno u otro
 Cuando se trata de elegir entre SQL y NoSQL, la decisión depende en gran medida del tipo de datos que se manejarán y de los requisitos del sistema:
 
 - **SQL** es ideal cuando se trabaja con datos altamente estructurados y bien definidos, como registros financieros, bases de datos de clientes con relaciones complejas o sistemas que requieren transacciones seguras y consistentes.
