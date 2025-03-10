@@ -390,14 +390,6 @@ print(Mascota.especie)  # Salida: Gato
 - `@classmethod` permite modificar especie, que es un atributo de clase.
 - Se usa `cls` en lugar de `self` para referirse a la clase
 
-❗ Conclusión:
-
-✅ `Métodos de Instancia` → Usan `self` y operan sobre el objeto.
-
-✅ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
-
-✅ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la clase ni de la instancia.
-
 ### 1.5 Cómo pasar argumentos a los métodos
 
 En Python, los métodos dentro de una clase pueden recibir argumentos adicionales además de self, lo que permite que interactúen con datos específicos proporcionados por el usuario. Dependiendo del tipo de método, los argumentos se manejan de distintas formas.
@@ -503,13 +495,13 @@ print(Conversor.convertir_celsius_a_fahrenheit(25))  # Salida: 77.0
 
 ❗ Conclusión:
 
-✅ Métodos de Instancia → Pasan argumentos a través de self y operan sobre el objeto.
+- `Métodos de Instancia` → Pasan argumentos a través de self y operan sobre el objeto.
 
-✅ Constructor (__init__) → Permite inicializar objetos con valores personalizados.
+- `Método Constructor (__init__)` → Permite inicializar objetos con valores personalizados.
 
-✅ Métodos de Clase (@classmethod) → Reciben cls y pueden modificar atributos de clase.
+- `Métodos de Clase (@classmethod)` → Reciben cls y pueden modificar atributos de clase.
 
-✅ Métodos Estáticos (@staticmethod) → Aceptan argumentos, pero no dependen de la clase ni del objeto.
+- `Métodos Estáticos (@staticmethod)` → Aceptan argumentos, pero no dependen de la clase ni del objeto.
 
 ### 1.6 Ventajas y desventajas del uso de las clases en Python
 
