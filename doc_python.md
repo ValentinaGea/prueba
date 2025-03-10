@@ -581,7 +581,7 @@ print(coche.marca)  # Salida: Toyota
 
 📌 Explicación:
 
--Cuando `no definimos el método __init__()` en una clase, como en el primer ejemplo, Python utiliza un constructor por defecto que no inicializa ningún atributo ni recibe parámetros adicionales. El objeto se crea, pero sin atributos específicos.
+- Cuando `no definimos el método __init__()` en una clase, como en el primer ejemplo, Python utiliza un constructor por defecto que no inicializa ningún atributo ni recibe parámetros adicionales. El objeto se crea, pero sin atributos específicos.
 - En cambio, `al definir __init__()` como en el segundo ejemplo, podemos inicializar atributos al momento de crear el objeto, proporcionando valores específicos a través de los parámetros del constructor. Esto da más control y flexibilidad sobre cómo se crean y configuran los objetos.
 
 En resumen, la diferencia es que definir __init__() permite inicializar atributos con valores personalizados, mientras que no definirlo crea objetos sin inicialización de atributos.
