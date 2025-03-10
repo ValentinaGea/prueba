@@ -1497,6 +1497,7 @@ print(p1 < p2)   # False (porque 30 no es menor que 25)
 - `p1 < p2` llama a `__lt__`.
 
  ❗ Conclusión
+
 Los métodos `Dunder` permiten personalizar cómo se comportan los objetos en Python. Con ellos, se pueden crear clases que actúan como listas, diccionarios, números y más. Son clave para escribir código más elegante y reutilizable.
 
 ## 9. Decorador de Python
@@ -1677,81 +1678,6 @@ print(funcion.__doc__)   # Esta es una función de prueba
 📌 Explicación:
 
 - `functools.wraps(func)` copia los metadatos de func a wrapper, preservando `__name__` y `__doc__`.
-
-### 9.6 Aplicaciones Comunes de Decoradores
-
-Los decoradores se usan en muchos casos, como:
-
-1️⃣ `Medir el Tiempo de Ejecución`
-
-```python
-import time
-
-def medir_tiempo(func):
-    def wrapper(*args, **kwargs):
-        inicio = time.time()
-        resultado = func(*args, **kwargs)
-        fin = time.time()
-        print(f"Tiempo de ejecución: {fin - inicio:.5f} segundos")
-        return resultado
-    return wrapper
-
-@medir_tiempo
-def tarea_pesada():
-    time.sleep(2)
-    print("Tarea completada")
-
-tarea_pesada()
-```
-
-2️⃣ `Control de Acceso` (Autenticación)
-
-```python
-def requiere_autenticacion(func):
-    def wrapper(*args, **kwargs):
-        usuario_autenticado = False  # Simulación de autenticación
-        if usuario_autenticado:
-            return func(*args, **kwargs)
-        else:
-            print("Acceso denegado: usuario no autenticado")
-    return wrapper
-
-@requiere_autenticacion
-def ver_datos():
-    print("Mostrando datos sensibles...")
-
-ver_datos()
-```
-
-3️⃣ `Contar Llamadas a una Función`
-
-```python
-def contador_llamadas(func):
-    contador = 0
-
-    def wrapper(*args, **kwargs):
-        nonlocal contador
-        contador += 1
-        print(f"Llamada número {contador} a {func.__name__}")
-        return func(*args, **kwargs)
-
-    return wrapper
-
-@contador_llamadas
-def saludar():
-    print("Hola!")
-
-saludar()
-saludar()
-```
-Salida:
-
-```css
-Llamada número 1 a saludar
-Hola!
-Llamada número 2 a saludar
-Hola!
-```
 
  ❗ Conclusión:
 
