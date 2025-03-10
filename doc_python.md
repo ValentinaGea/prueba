@@ -735,7 +735,7 @@ Las APIs son herramientas fundamentales en la programación moderna. Nos permite
 
 En el contexto de una API, existen tres verbos principales que se utilizan para interactuar con los recursos de la aplicación o servicio. Estos verbos corresponden a los métodos HTTP más comunes y son fundamentales para realizar operaciones de lectura, escritura, actualización y eliminación de datos. Los tres verbos más importantes de una API son:
 
-![Los tres verbos de API](IMG/get.png)
+![Los tres verbos de API](img/get.png)
 
 1️⃣ `GET` (Obtener datos)
 
