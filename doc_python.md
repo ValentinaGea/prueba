@@ -843,7 +843,7 @@ MongoDB almacena los datos en RAM para poder acceder más rápidamente a ellos y
 
 ### 5.4 SQL vs NoSQL: ¿cuáles son las diferencias y cuándo utilizar uno u otro?
 
-#### 5.4.1 Principales diferencias SQL y NoSQL
+#### **5.4.1 Principales diferencias SQL y NoSQL**
 
 1️⃣ Estructura de datos
 - SQL usa tablas con filas y columnas.
