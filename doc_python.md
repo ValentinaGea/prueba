@@ -184,7 +184,7 @@ print(coche2.marca, coche2.modelo)  # Salida: Honda Civic
 
 Además de la distinción entre `atributos de clase` e `instancia`, los atributos pueden tener diferentes `niveles de visibilidad`, que en Python se indican mediante convenciones de nomenclatura en lugar de palabras clave como en otros lenguajes de programación. Los atributos `private` y `protected` en Python se definen de manera diferente, y es importante conocer sus diferencias para seguir buenas prácticas de programación.
 
-2️⃣ `Atributos private`
+3️⃣ `Atributos private`
 
 Un atributo private es aquel que no debe ser accesible desde fuera de la clase. Para declarar un atributo como privado en Python, se utiliza doble guion bajo (`__`) antes del nombre del atributo. Python aplica una técnica interna conocida como `name mangling`, que cambia el nombre del atributo para que no sea accesible directamente.
 
@@ -213,7 +213,8 @@ print(persona.mostrar_informacion())  # Salida: Nombre: Juan, Edad: 25
 
 Se utilizan para encapsular la información de un objeto y asegurarse de que los datos sean manipulados solo por los métodos de la clase, protegiendo así la integridad del objeto.
 
-2️⃣  `Atributos protected`
+4️⃣  `Atributos protected`
+
 Los atributos protected son aquellos que deberían ser usados dentro de la clase y sus subclases, pero no desde fuera. En Python, los atributos protected se indican con un solo guion bajo (`_`) antes del nombre del atributo.
 
 🔹 Ejemplo de atributo protected:
@@ -285,13 +286,17 @@ En Python, los métodos son funciones que se definen dentro de una clase y que o
 
 1️⃣ `Métodos de Instancia` → Usan `self` y trabajan con atributos del objeto.
 
-2️⃣ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
+2️⃣ `Método Constructor __init__` → Permite inicializar objetos con valores personalizados.
 
-3️⃣ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la instancia ni de la clase.
+3️⃣ `Métodos de Clase` → Usan `@classmethod` y `cls` para modificar atributos de clase.
+
+4️⃣ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la instancia ni de la clase.
+
+Estos son los métodos más utilizados en la programación orientada a objetos y están diseñados para interactuar directamente con instancias específicas de la clase. A continuación, exploraremos en detalle cada uno de ellos.
 
 1️⃣ `Métodos de Instancia`
 
-Son los más comunes y operan sobre un objeto específico.
+Usan `self` para acceder, modificar o interactuar con los atributos y métodos de una instancia específica de la clase. Se definen dentro de la clase y operan sobre objetos individuales.
 
 🔹 Ejemplo:
 
@@ -314,29 +319,31 @@ print(persona1.presentarse())  # Salida: Hola, soy Carlos y tengo 30 años.
 - `self.nombre` y `self.edad` son atributos del objeto.
 - `presentarse()` usa `self` para acceder a estos atributos.
 
-2️⃣ `Métodos de Clase` (`@classmethod`)
+2️⃣ `Método Constructor __init__`
 
-Modifican o acceden a atributos de clase en lugar de atributos de instancia.
+El método __init__ es un constructor en Python que se ejecuta automáticamente al crear una nueva instancia de una clase. Su función principal es inicializar los atributos del objeto con valores personalizados.
 
 🔹 Ejemplo:
 
 ```python
-class Mascota:
-    especie = "Perro"  # Atributo de clase
+class Persona:
+    def __init__(self, nombre, edad):  # Constructor __init__
+        self.nombre = nombre
+        self.edad = edad
 
-    @classmethod
-    def cambiar_especie(cls, nueva_especie):
-        cls.especie = nueva_especie
+# Crear instancias de la clase Persona con valores personalizados
+persona1 = Persona("Ana", 25)
+persona2 = Persona("Luis", 32)
 
-# Llamar al método de clase sin instanciar
-Mascota.cambiar_especie("Gato")
-print(Mascota.especie)  # Salida: Gato
+print(persona1.nombre, persona1.edad)  # Salida: Ana 25
+print(persona2.nombre, persona2.edad)  # Salida: Luis 32
 ```
 
 📌 Explicación:
 
-- `@classmethod` permite modificar especie, que es un atributo de clase.
-- Se usa `cls` en lugar de `self` para referirse a la clase
+- El método `__init__` permite definir los atributos nombre y edad al crear un nuevo objeto.
+- Se ejecuta automáticamente sin necesidad de llamarlo explícitamente.
+- Cada instancia de la clase puede tener valores distintos gracias al constructor.
 
 3️⃣ `Métodos Estáticos` (`@staticmethod`)
 
@@ -367,6 +374,29 @@ print(Calculadora.sumar(5, 3))  # Salida: 8
 
 ✅ `Métodos Estáticos` → Usan `@staticmethod` y no dependen de la clase ni de la instancia.
 
+4️⃣ `Métodos de Clase` (`@classmethod`)
+
+Modifican o acceden a atributos de clase en lugar de atributos de instancia.
+
+🔹 Ejemplo:
+
+```python
+class Mascota:
+    especie = "Perro"  # Atributo de clase
+
+    @classmethod
+    def cambiar_especie(cls, nueva_especie):
+        cls.especie = nueva_especie
+
+# Llamar al método de clase sin instanciar
+Mascota.cambiar_especie("Gato")
+print(Mascota.especie)  # Salida: Gato
+```
+
+📌 Explicación:
+
+- `@classmethod` permite modificar especie, que es un atributo de clase.
+- Se usa `cls` en lugar de `self` para referirse a la clase
 
 ### 1.5 Cómo pasar argumentos a los métodos
 
