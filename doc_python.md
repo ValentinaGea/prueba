@@ -176,8 +176,11 @@ print(coche2.marca, coche2.modelo)  # Salida: Honda Civic
 ❗ Conclusión:
 
 ✅ Los atributos de clase son `compartidos` por todas las instancias.
+
 ✅ Los atributos de instancia son `únicos` para cada objeto.
+
 ✅ Usar `self` dentro del `__init__()` permite definir `atributos` específicos para cada objeto.
+
 
 Además de la distinción entre `atributos de clase` e `instancia`, los atributos pueden tener diferentes `niveles de visibilidad`, que en Python se indican mediante convenciones de nomenclatura en lugar de palabras clave como en otros lenguajes de programación. Los atributos `private` y `protected` en Python se definen de manera diferente, y es importante conocer sus diferencias para seguir buenas prácticas de programación.
 
