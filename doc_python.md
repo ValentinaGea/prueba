@@ -4,7 +4,8 @@
 
 Python soporta la programación orientada a objetos (POO). Esto quiere decir que podemos definir entidades agrupando (encapsulando) sus `atributos` y `métodos` (comportamientos) en `clases`.
 
-!^[ejemplo de Clases en Python](img/clases_py.png)
+![ejemplo de Clases en Python](img/clases_py.png)
+
 ### 1.1  Crear una clase en Python
 
  Una `clase` es una plantilla que define la estructura y el comportamiento de los `objetos`, que son ` instancias` de esa clase. Gracias a las clases, es posible crear múltiples objetos con las mismas propiedades y métodos, pero con valores distintos en sus atributos.
@@ -221,7 +222,7 @@ Tipos de Métodos en una Clase
 2️⃣ Métodos de Clase → Usan @classmethod y cls para modificar atributos de clase.
 3️⃣ Métodos Estáticos → Usan @staticmethod y no dependen de la instancia ni de la clase.
 
-#### **1.4.1  Métodos de Instancia**
+####  1.4.1  **Métodos de Instancia**
 Son los más comunes y operan sobre un objeto específico.
 
 🔹 Ejemplo:
